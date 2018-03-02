@@ -3,6 +3,8 @@
 Ruby library to invoke Heroku Postgres APIs.
 An extension to the official [Platform API]() gem to introduce the missing APIs for Postgres.
 
+[![Build Status](https://travis-ci.org/coorasse/heroku-api-postgres.svg?branch=master)](https://travis-ci.org/coorasse/heroku-api-postgres)
+
 :warning: This gem is not officialy supported, therefore if Heroku changes their APIs it may stop working. :warning:
 
 ## Installation
