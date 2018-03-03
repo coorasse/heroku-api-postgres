@@ -49,6 +49,20 @@ postgres_api_client = Heroku::Api::Postgres.connect_oauth(ENV['HEROKU_OAUTH_TOKE
 Look into [Models](docs/models.rb) for a detailed description of the JSON objects returned by the APIs.
 Those are the bare objects returned by the official Heroku API.
 
+### Databases
+
+```ruby
+databases_client = postgres_api_client.database
+```
+
+#### Info
+
+```ruby
+database_info = databases_client.info(database_id)
+```
+
+returns a [Database](docs/models.md#database).
+
 ### Backups
 
 ```ruby
@@ -63,7 +77,9 @@ backups = backups_client.list(app_id)
 
 returns an array of [Backup](docs/models.md#backup).
 
-The app_id can be either the name of your heroku app or the id. [Check official API](https://devcenter.heroku.com/articles/platform-api-reference#app)
+The app_id can be either the name of your heroku app or the id.
+
+[Check official API](https://devcenter.heroku.com/articles/platform-api-reference#app)
 
 #### Schedules
 
@@ -74,7 +90,8 @@ schedules = backups_client.schedules(database_id)
 returns an array of [Schedule](docs/models.md#schedule)
 
 
-To get the backup schedules of a database you need a database id. You can obtain a database id by calling the Heroku Platform API
+### How do I get the database_id ?
+You can obtain a database id by calling the Heroku Platform API
 
 ```ruby
 addons = heroku.addon.list
