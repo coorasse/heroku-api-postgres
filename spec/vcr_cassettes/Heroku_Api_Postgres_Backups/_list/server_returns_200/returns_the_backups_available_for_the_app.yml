@@ -15,15 +15,13 @@ http_interactions:
       - Ruby
       Host:
       - postgres-starter-api.heroku.com
-      Authorization:
-      - Basic OmQwYzA2Y2ExLWI1Y2EtNGEzNi1hYjU2LTU5ZmE0MmViMWIyYw==
   response:
     status:
       code: 200
       message: OK
     headers:
       Content-Length:
-      - '10428'
+      - '11271'
       Content-Type:
       - application/json
       Via:
@@ -31,45 +29,48 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Fri, 02 Mar 2018 20:36:36 GMT
+      - Sat, 03 Mar 2018 20:38:07 GMT
     body:
       encoding: UTF-8
-      string: '[{"uuid":"cff72f62-3ea9-4181-b02a-747adff8749b","num":504,"from_name":"DATABASE","from_type":"pg_dump","from_url":"from_url","to_name":"SCHEDULED
-        BACKUP","to_type":"gof3r","to_url":"to_url","options":{},"source_bytes":25811480,"processed_bytes":2169504,"succeeded":true,"warnings":0,"created_at":"2018-03-01
+      string: '[{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":505,"from_name":"DATABASE","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"SCHEDULED
+        BACKUP","to_type":"gof3r","to_url":"https://bucket_name.s3.amazonaws.com/resource_address","options":{},"source_bytes":26057240,"processed_bytes":2206151,"succeeded":true,"warnings":0,"created_at":"2018-03-02
+        23:02:12 +0000","started_at":"2018-03-02 23:03:23 +0000","canceled_at":null,"updated_at":"2018-03-02
+        23:03:54 +0000","finished_at":"2018-03-02 23:03:51 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c"}},{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":504,"from_name":"DATABASE","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"SCHEDULED
+        BACKUP","to_type":"gof3r","to_url":"https://bucket_name.s3.amazonaws.com/resource_address","options":{},"source_bytes":25811480,"processed_bytes":2169504,"succeeded":true,"warnings":0,"created_at":"2018-03-01
         23:04:41 +0000","started_at":"2018-03-01 23:05:50 +0000","canceled_at":null,"updated_at":"2018-03-01
-        23:06:22 +0000","finished_at":"2018-03-01 23:06:19 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"30167816-0cd9-4936-93a7-23121d1000bb"}},{"uuid":"e38dea08-ca24-47d8-ace0-a95e76354e5c","num":503,"from_name":"DATABASE","from_type":"pg_dump","from_url":"from_url","to_name":"SCHEDULED
-        BACKUP","to_type":"gof3r","to_url":"to_url","options":{},"source_bytes":25655832,"processed_bytes":2142399,"succeeded":true,"warnings":0,"created_at":"2018-02-28
+        23:06:22 +0000","finished_at":"2018-03-01 23:06:19 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c"}},{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":503,"from_name":"DATABASE","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"SCHEDULED
+        BACKUP","to_type":"gof3r","to_url":"https://bucket_name.s3.amazonaws.com/resource_address","options":{},"source_bytes":25655832,"processed_bytes":2142399,"succeeded":true,"warnings":0,"created_at":"2018-02-28
         23:02:35 +0000","started_at":"2018-02-28 23:03:59 +0000","canceled_at":null,"updated_at":"2018-02-28
-        23:04:50 +0000","finished_at":"2018-02-28 23:04:46 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"30167816-0cd9-4936-93a7-23121d1000bb"}},{"uuid":"c1a1e6ab-bb4a-435f-ae4b-6deaed779101","num":502,"from_name":"DATABASE","from_type":"pg_dump","from_url":"from_url","to_name":"SCHEDULED
-        BACKUP","to_type":"gof3r","to_url":"to_url","options":{},"source_bytes":25606680,"processed_bytes":2128609,"succeeded":true,"warnings":0,"created_at":"2018-02-27
+        23:04:50 +0000","finished_at":"2018-02-28 23:04:46 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c"}},{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":502,"from_name":"DATABASE","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"SCHEDULED
+        BACKUP","to_type":"gof3r","to_url":"https://bucket_name.s3.amazonaws.com/resource_address","options":{},"source_bytes":25606680,"processed_bytes":2128609,"succeeded":true,"warnings":0,"created_at":"2018-02-27
         23:03:54 +0000","started_at":"2018-02-27 23:05:21 +0000","canceled_at":null,"updated_at":"2018-02-27
-        23:06:07 +0000","finished_at":"2018-02-27 23:06:07 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"30167816-0cd9-4936-93a7-23121d1000bb"}},{"uuid":"afe9b490-0987-4e91-a2a0-0beaea658671","num":501,"from_name":"DATABASE","from_type":"pg_dump","from_url":"from_url","to_name":"SCHEDULED
-        BACKUP","to_type":"gof3r","to_url":"to_url","options":{},"source_bytes":25598488,"processed_bytes":2116652,"succeeded":true,"warnings":0,"created_at":"2018-02-26
+        23:06:07 +0000","finished_at":"2018-02-27 23:06:07 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c"}},{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":501,"from_name":"DATABASE","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"SCHEDULED
+        BACKUP","to_type":"gof3r","to_url":"https://bucket_name.s3.amazonaws.com/resource_address","options":{},"source_bytes":25598488,"processed_bytes":2116652,"succeeded":true,"warnings":0,"created_at":"2018-02-26
         23:03:10 +0000","started_at":"2018-02-26 23:04:26 +0000","canceled_at":null,"updated_at":"2018-02-26
-        23:05:17 +0000","finished_at":"2018-02-26 23:05:13 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"30167816-0cd9-4936-93a7-23121d1000bb"}},{"uuid":"53bfabf7-3795-47bf-90dd-75cb8d4f613f","num":500,"from_name":"DATABASE","from_type":"pg_dump","from_url":"from_url","to_name":"SCHEDULED
-        BACKUP","to_type":"gof3r","to_url":"to_url","options":{},"source_bytes":25532952,"processed_bytes":2095076,"succeeded":true,"warnings":0,"created_at":"2018-02-25
+        23:05:17 +0000","finished_at":"2018-02-26 23:05:13 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c"}},{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":500,"from_name":"DATABASE","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"SCHEDULED
+        BACKUP","to_type":"gof3r","to_url":"https://bucket_name.s3.amazonaws.com/resource_address","options":{},"source_bytes":25532952,"processed_bytes":2095076,"succeeded":true,"warnings":0,"created_at":"2018-02-25
         23:02:28 +0000","started_at":"2018-02-25 23:03:45 +0000","canceled_at":null,"updated_at":"2018-02-25
-        23:04:31 +0000","finished_at":"2018-02-25 23:04:31 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"30167816-0cd9-4936-93a7-23121d1000bb"}},{"uuid":"4f47e3a4-35a5-4107-9320-94a056f99138","num":499,"from_name":"DATABASE","from_type":"pg_dump","from_url":"from_url","to_name":"SCHEDULED
-        BACKUP","to_type":"gof3r","to_url":"to_url","options":{},"source_bytes":25516568,"processed_bytes":2087117,"succeeded":true,"warnings":0,"created_at":"2018-02-24
+        23:04:31 +0000","finished_at":"2018-02-25 23:04:31 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c"}},{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":499,"from_name":"DATABASE","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"SCHEDULED
+        BACKUP","to_type":"gof3r","to_url":"https://bucket_name.s3.amazonaws.com/resource_address","options":{},"source_bytes":25516568,"processed_bytes":2087117,"succeeded":true,"warnings":0,"created_at":"2018-02-24
         23:01:59 +0000","started_at":"2018-02-24 23:03:25 +0000","canceled_at":null,"updated_at":"2018-02-24
-        23:04:12 +0000","finished_at":"2018-02-24 23:04:11 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"30167816-0cd9-4936-93a7-23121d1000bb"}},{"uuid":"9921ba52-a175-4bd5-ba09-f46972344873","num":498,"from_name":"DATABASE","from_type":"pg_dump","from_url":"from_url","to_name":"SCHEDULED
-        BACKUP","to_type":"gof3r","to_url":"to_url","options":{},"source_bytes":25483800,"processed_bytes":2081838,"succeeded":true,"warnings":0,"created_at":"2018-02-23
+        23:04:12 +0000","finished_at":"2018-02-24 23:04:11 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c"}},{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":498,"from_name":"DATABASE","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"SCHEDULED
+        BACKUP","to_type":"gof3r","to_url":"https://bucket_name.s3.amazonaws.com/resource_address","options":{},"source_bytes":25483800,"processed_bytes":2081838,"succeeded":true,"warnings":0,"created_at":"2018-02-23
         23:05:02 +0000","started_at":"2018-02-23 23:06:27 +0000","canceled_at":null,"updated_at":"2018-02-23
-        23:07:13 +0000","finished_at":"2018-02-23 23:07:13 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"30167816-0cd9-4936-93a7-23121d1000bb"}},{"uuid":"4e426d00-8bd1-495d-b77f-5d54a401ca61","num":345,"from_name":"DATABASE","from_type":"pg_dump","from_url":"from_url","to_name":"WHITE","to_type":"pg_restore","to_url":"to_url","options":{},"source_bytes":17652248,"processed_bytes":1018589,"succeeded":true,"warnings":0,"created_at":"2017-09-25
+        23:07:13 +0000","finished_at":"2018-02-23 23:07:13 +0000","deleted_at":null,"purged_at":null,"num_keep":5,"schedule":{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c"}},{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":345,"from_name":"DATABASE","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"WHITE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":17652248,"processed_bytes":1018589,"succeeded":true,"warnings":0,"created_at":"2017-09-25
         20:20:22 +0000","started_at":"2017-09-25 20:20:22 +0000","canceled_at":null,"updated_at":"2017-09-25
-        20:21:34 +0000","finished_at":"2017-09-25 20:21:32 +0000","deleted_at":null,"purged_at":null,"num_keep":5},{"uuid":"9808e580-18c5-48ee-958e-3f9ad6c32a6e","num":180,"from_name":"From
-        Name","from_type":"pg_dump","from_url":"from_url","to_name":"Target
-        Name","to_type":"pg_restore","to_url":"to_url","options":{},"source_bytes":15270060,"processed_bytes":475190,"succeeded":true,"warnings":0,"created_at":"2017-04-14
+        20:21:34 +0000","finished_at":"2017-09-25 20:21:32 +0000","deleted_at":null,"purged_at":null,"num_keep":5},{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":180,"from_name":"From
+        Name","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"Target
+        Name","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":15270060,"processed_bytes":475190,"succeeded":true,"warnings":0,"created_at":"2017-04-14
         22:33:02 +0000","started_at":"2017-04-14 22:33:02 +0000","canceled_at":null,"updated_at":"2017-04-14
-        22:34:50 +0000","finished_at":"2017-04-14 22:34:50 +0000","deleted_at":null,"purged_at":null,"num_keep":5},{"uuid":"47abe58f-a679-43e3-a388-cd3529e9416e","num":118,"from_name":"DATABASE","from_type":"pg_dump","from_url":"from_url","to_name":"BACKUP","to_type":"gof3r","to_url":"to_url","options":{},"source_bytes":13246636,"processed_bytes":361529,"succeeded":true,"warnings":0,"created_at":"2017-02-12
+        22:34:50 +0000","finished_at":"2017-04-14 22:34:50 +0000","deleted_at":null,"purged_at":null,"num_keep":5},{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":118,"from_name":"DATABASE","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"BACKUP","to_type":"gof3r","to_url":"https://bucket_name.s3.amazonaws.com/resource_address","options":{},"source_bytes":13246636,"processed_bytes":361529,"succeeded":true,"warnings":0,"created_at":"2017-02-12
         10:51:11 +0000","started_at":"2017-02-12 10:51:11 +0000","canceled_at":null,"updated_at":"2017-02-12
-        10:51:53 +0000","finished_at":"2017-02-12 10:51:51 +0000","deleted_at":null,"purged_at":null,"num_keep":2},{"uuid":"e7e4bc9c-3ac4-4b90-a375-a5c204f258b8","num":35,"from_name":"DATABASE","from_type":"pg_dump","from_url":"from_url","to_name":"BACKUP","to_type":"gof3r","to_url":"to_url","options":{},"source_bytes":9584812,"processed_bytes":78803,"succeeded":true,"warnings":0,"created_at":"2016-11-22
+        10:51:53 +0000","finished_at":"2017-02-12 10:51:51 +0000","deleted_at":null,"purged_at":null,"num_keep":2},{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":35,"from_name":"DATABASE","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"BACKUP","to_type":"gof3r","to_url":"https://bucket_name.s3.amazonaws.com/resource_address","options":{},"source_bytes":9584812,"processed_bytes":78803,"succeeded":true,"warnings":0,"created_at":"2016-11-22
         13:15:24 +0000","started_at":"2016-11-22 13:15:25 +0000","canceled_at":null,"updated_at":"2016-11-22
-        13:15:51 +0000","finished_at":"2016-11-22 13:15:51 +0000","deleted_at":null,"purged_at":null,"num_keep":2},{"uuid":"e4500492-ed05-44d0-aeda-81b3fe0d92dc","num":11,"from_name":"DATABASE","from_type":"pg_dump","from_url":"from_url","to_name":"BACKUP","to_type":"gof3r","to_url":"to_url","options":{},"source_bytes":9191596,"processed_bytes":55877,"succeeded":true,"warnings":0,"created_at":"2016-10-30
+        13:15:51 +0000","finished_at":"2016-11-22 13:15:51 +0000","deleted_at":null,"purged_at":null,"num_keep":2},{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":11,"from_name":"DATABASE","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"BACKUP","to_type":"gof3r","to_url":"https://bucket_name.s3.amazonaws.com/resource_address","options":{},"source_bytes":9191596,"processed_bytes":55877,"succeeded":true,"warnings":0,"created_at":"2016-10-30
         11:21:08 +0000","started_at":"2016-10-30 11:21:08 +0000","canceled_at":null,"updated_at":"2016-10-30
-        11:21:35 +0000","finished_at":"2016-10-30 11:21:34 +0000","deleted_at":null,"purged_at":null,"num_keep":2},{"uuid":"bee76782-218a-4743-8a3d-93a2004e5e11","num":1,"from_name":"DATABASE","from_type":"pg_dump","from_url":"from_url","to_name":"BACKUP","to_type":"gof3r","to_url":"to_url","options":{},"source_bytes":9134252,"processed_bytes":50850,"succeeded":true,"warnings":0,"created_at":"2016-10-21
+        11:21:35 +0000","finished_at":"2016-10-30 11:21:34 +0000","deleted_at":null,"purged_at":null,"num_keep":2},{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":1,"from_name":"DATABASE","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"BACKUP","to_type":"gof3r","to_url":"https://bucket_name.s3.amazonaws.com/resource_address","options":{},"source_bytes":9134252,"processed_bytes":50850,"succeeded":true,"warnings":0,"created_at":"2016-10-21
         10:15:36 +0000","started_at":"2016-10-21 10:15:36 +0000","canceled_at":null,"updated_at":"2016-10-21
         10:16:08 +0000","finished_at":"2016-10-21 10:16:05 +0000","deleted_at":null,"purged_at":null,"num_keep":2}]'
     http_version: 
-  recorded_at: Fri, 02 Mar 2018 20:36:36 GMT
+  recorded_at: Sat, 03 Mar 2018 20:38:07 GMT
 recorded_with: VCR 4.0.0

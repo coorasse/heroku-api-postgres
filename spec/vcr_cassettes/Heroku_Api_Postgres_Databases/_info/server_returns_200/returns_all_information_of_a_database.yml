@@ -15,8 +15,6 @@ http_interactions:
       - Ruby
       Host:
       - postgres-starter-api.heroku.com
-      Authorization:
-      - Basic OmQwYzA2Y2ExLWI1Y2EtNGEzNi1hYjU2LTU5ZmE0MmViMWIyYw==
   response:
     status:
       code: 200
@@ -31,14 +29,14 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sat, 03 Mar 2018 14:37:37 GMT
+      - Sat, 03 Mar 2018 20:38:12 GMT
     body:
       encoding: UTF-8
       string: '{"addon_id":"<VALID_DATABASE_ID_WITH_SCHEDULES>","name":"postgresql-horizontal-25349","info":[{"name":"Plan","values":["Hobby-basic"]},{"name":"Status","values":["Available"]},{"name":"Connections","values":["3/20"]},{"name":"PG
         Version","values":["9.5.5"]},{"name":"Created","values":["2016-11-12 09:59
         UTC"]},{"name":"Data Size","values":["915.2 MB"]},{"name":"Tables","values":[140]},{"name":"Rows","values":["1788360/10000000
         (In compliance)"]},{"name":"Fork/Follow","values":["Unsupported"]},{"name":"Rollback","values":["Unsupported"]},{"name":"Continuous
-        Protection","values":["Off"]},{"name":"Region","values":["Europe"]}],"plan":"Hobby-basic","created_at":"2016-11-12T09:59:55.349+00:00","database_user":"username","database_name":"schema_name","available_for_ingress":true,"standalone?":false,"resource_url":"postgres://username:password@url:port/schema_name","waiting?":false,"num_bytes":959652012}'
+        Protection","values":["Off"]},{"name":"Region","values":["Europe"]}],"plan":"Hobby-basic","created_at":"2016-11-12T09:59:55.349+00:00","database_user":"username","database_name":"schema_name","available_for_ingress":true,"standalone?":false,"resource_url":"postgres://username:password@database_url:port/schema_name","waiting?":false,"num_bytes":959652012}'
     http_version: 
-  recorded_at: Sat, 03 Mar 2018 14:37:37 GMT
+  recorded_at: Sat, 03 Mar 2018 20:38:12 GMT
 recorded_with: VCR 4.0.0

@@ -1,6 +1,6 @@
 RSpec.describe Heroku::Api::Postgres::Databases, :vcr do
   let(:oauth_token) { ENV['HEROKU_OAUTH_TOKEN'] }
-  let(:client) {Heroku::Api::Postgres.connect_oauth(oauth_token)}
+  let(:client) { Heroku::Api::Postgres.connect_oauth(oauth_token) }
 
   describe '#info' do
     let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
