@@ -9,7 +9,9 @@ Source: https://devcenter.heroku.com/articles/heroku-cli-commands
 
 - [ ] pg:backups:cancel
 
-- [ ] pg:backups:capture
+- [x] pg:backups:capture ---> `client.backups.capture(database_id)`
+The command returns immediately, without waiting for the capture to be completed.
+`--wait-interval` not implemented. `--snapshot` not implemented.
 
 - [ ] pg:backups:delete
 

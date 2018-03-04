@@ -19,6 +19,10 @@ module Heroku
         def schedules(database_id)
           @client.perform_get_request("/client/v11/databases/#{database_id}/transfer-schedules")
         end
+
+        def capture(database_id)
+          @client.perform_post_request("/client/v11/databases/#{database_id}/backups")
+        end
       end
     end
   end

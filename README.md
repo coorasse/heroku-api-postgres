@@ -12,7 +12,9 @@ both this gem and the official Heroku CLI.
 
 Not all APIs are implemented at the moment but we are working hard on implementing all of them.
 
-Contributes and Pull Requests are welcome.
+Please check the [list of implemented and not implemented services](docs/services.md).
+
+Contributes and Pull Requests are welcome!
 
 ## Installation
 
@@ -89,6 +91,15 @@ schedules = backups_client.schedules(database_id)
 
 returns an array of [Schedule](docs/models.md#schedule)
 
+#### Capture
+Captures a new backup for the given database
+
+```ruby
+backup = backups_client.capture(database_id)
+```
+
+returns a [Backup](docs/models.md#backup)
+
 
 ### How do I get the database_id ?
 You can obtain a database id by calling the Heroku Platform API
@@ -117,8 +128,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/cooras
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to
 the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-Please check the [list of implemented and not implemented services](docs/services.md).
-You are welcome to contribute in implementing the missing ones.
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

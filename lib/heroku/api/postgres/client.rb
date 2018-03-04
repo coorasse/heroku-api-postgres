@@ -20,20 +20,40 @@ module Heroku
         end
 
         def perform_get_request(path)
-          url = URI.join(@basic_url, path)
+          url = build_uri(path)
           req = Net::HTTP::Get.new(url)
-          req['Accept'] = 'application/vnd.heroku+json; version=3'
-          req.basic_auth '', @oauth_client_key
-          http_new = Net::HTTP.new(url.hostname, url.port)
-          http_new.use_ssl = true
-          response = http_new.start { |http| http.request(req) }
+          set_headers(req)
+          response = start_request(req, url)
+          parse_response(response)
+        end
+
+        def perform_post_request(path, params = {})
+          url = build_uri(path)
+          req = Net::HTTP::Post.new(url)
+          set_headers(req)
+          req.body = params.to_json
+          response = start_request(req, url)
           parse_response(response)
         end
 
         private
+        def build_uri(path)
+          URI.join(@basic_url, path)
+        end
+
+        def set_headers(req)
+          req['Accept'] = 'application/vnd.heroku+json; version=3'
+          req.basic_auth '', @oauth_client_key
+        end
+
+        def start_request(req, url)
+          http_new = Net::HTTP.new(url.hostname, url.port)
+          http_new.use_ssl = true
+          response = http_new.start { |http| http.request(req) }
+        end
 
         def parse_response(response)
-          if response.code == '200'
+          if %w[200 201].include? response.code
             JSON.parse(response.body, symbolize_names: true)
           else
             { error: { status: response.code.to_i } }

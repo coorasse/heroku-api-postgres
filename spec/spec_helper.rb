@@ -14,11 +14,11 @@ VCR.configure do |config|
   # Removes all private data (Basic Auth, Set-Cookie headers...)
   config.before_record do |i|
     i.request.headers.delete('Authorization')
-    i.response.body.gsub!(%r((postgres:\/\/)([^\"]*)"), '\1username:password@database_url:port/schema_name"')
-    i.response.body.gsub!(%r((https:\/\/)([^\.]*)(\.s3\.amazonaws\.com)([^\"]*)), '\1bucket_name\3/resource_address')
-    i.response.body.gsub!(%r((\"database_user\":\")([^\"]*)"), '\1username"')
-    i.response.body.gsub!(%r((\"database_name\":\")([^\"]*)"), '\1schema_name"')
-    i.response.body.gsub!(%r((\"uuid\":\")([^\"]*)"), '\182ead067-7608-f587-cf6f-d351ba6b684c"')
+    i.response.body.gsub!(%r{(postgres:\/\/)([^\"]*)"}, '\1username:password@database_url:port/schema_name"')
+    i.response.body.gsub!(%r{(https:\/\/)([^\.]*)(\.s3\.amazonaws\.com)([^\"]*)}, '\1bucket_name\3/resource_address')
+    i.response.body.gsub!(/(\"database_user\":\")([^\"]*)"/, '\1username"')
+    i.response.body.gsub!(/(\"database_name\":\")([^\"]*)"/, '\1schema_name"')
+    i.response.body.gsub!(/(\"uuid\":\")([^\"]*)"/, '\182ead067-7608-f587-cf6f-d351ba6b684c"')
   end
 end
 

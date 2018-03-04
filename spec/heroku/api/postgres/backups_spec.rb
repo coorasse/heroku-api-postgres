@@ -45,4 +45,17 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
       end
     end
   end
+
+  describe '#capture' do
+    let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
+    subject(:json_response) { client.backups.capture(database_id) }
+    context 'server returns 200' do
+      it 'captures a backup of the database' do
+        expect(json_response[:uuid]).not_to be_nil
+        expect(json_response[:from_type]).to eq 'pg_dump'
+        expect(json_response[:to_type]).to eq 'gof3r'
+        expect(json_response[:succeeded]).to be_nil
+      end
+    end
+  end
 end
