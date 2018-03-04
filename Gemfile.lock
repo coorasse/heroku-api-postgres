@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    heroku-api-postgres (0.1.0.alpha4)
+    heroku-api-postgres (0.1.0.alpha5)
 
 GEM
   remote: https://rubygems.org/
