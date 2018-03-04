@@ -28,7 +28,7 @@ module Heroku
         end
 
         def databases
-          @backups ||= Databases.new(self)
+          @databases ||= Databases.new(self)
         end
 
         def perform_get_request(path)

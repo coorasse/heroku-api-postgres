@@ -1,7 +1,7 @@
 module Heroku
   module Api
     module Postgres
-      VERSION = '0.1.0.alpha4'.freeze
+      VERSION = '0.1.0.alpha5'.freeze
     end
   end
 end
