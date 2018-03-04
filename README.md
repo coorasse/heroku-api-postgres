@@ -51,6 +51,15 @@ postgres_api_client = Heroku::Api::Postgres.connect_oauth(ENV['HEROKU_OAUTH_TOKE
 Look into [Models](docs/models.rb) for a detailed description of the JSON objects returned by the APIs.
 Those are the bare objects returned by the official Heroku API.
 
+#### Wait
+
+```ruby
+databases = postgres_api_client.wait(database_id, wait_interval: 5)
+```
+
+Waits for the given database to be ready. Polls every `wait_interval` seconds (default 3).
+
+
 ### Databases
 
 ```ruby

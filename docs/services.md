@@ -91,4 +91,5 @@ The command returns immediately, without waiting for the capture to be completed
 
 - [ ] pg:upgrade
 
-- [ ] pg:wait
+- [x] pg:wait --> `client.wait(database_id)`
+Waits for a database to be ready.
