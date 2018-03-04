@@ -100,6 +100,17 @@ schedules = backups_client.schedules(database_id)
 
 returns an array of [Schedule](docs/models.md#schedule)
 
+### Schedule
+
+```ruby
+schedule = backups_client.schedule(database_id)
+```
+
+Schedules the backups at 00:00 UTC.
+
+Returns a [Schedule](docs/models.md#schedule)
+
+
 #### Capture
 Captures a new backup for the given database
 

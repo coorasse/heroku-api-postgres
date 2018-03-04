@@ -58,4 +58,17 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
       end
     end
   end
+
+  describe '#schedule' do
+    let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
+    subject(:json_response) { client.backups.schedule(database_id) }
+    context 'server returns 200' do
+      it 'creates a schedule for the given database' do
+        expect(json_response[:uuid]).not_to be_nil
+        expect(json_response[:name]).to eq 'DATABASE_URL'
+        expect(json_response[:hour]).to eq 0
+        expect(json_response[:timezone]).to eq 'UTC'
+      end
+    end
+  end
 end

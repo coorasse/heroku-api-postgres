@@ -21,7 +21,8 @@ The command returns immediately, without waiting for the capture to be completed
 
 - [ ] pg:backups:restore
 
-- [ ] pg:backups:schedule
+- [x] pg:backups:schedule --> `client.backups.schedule(database_id)`
+
 
 - [x] pg:backups:schedules --> `client.backups.schedules(database_id)`
 
