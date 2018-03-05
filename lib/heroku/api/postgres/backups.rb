@@ -30,6 +30,10 @@ module Heroku
         def capture(database_id)
           @client.perform_post_request("/client/v11/databases/#{database_id}/backups")
         end
+
+        def url(app_id, backup_num)
+          @client.perform_post_request("/client/v11/apps/#{app_id}/transfers/#{backup_num}/actions/public-url")
+        end
       end
     end
   end

@@ -69,3 +69,11 @@
     :retain_weeks=>1,
     :retain_months=>0 }
 ```
+
+## BackupUrl
+
+```ruby
+{   :expires_at => "2018-03-05 22:05:36 +0000",
+    :url => "https://bucket_name.s3.amazonaws.com/resource_address"
+}
+```

@@ -28,7 +28,7 @@ The command returns immediately, without waiting for the capture to be completed
 
 - [ ] pg:backups:unschedule
 
-- [ ] pg:backups:url
+- [x] pg:backups:url --> `client.backups.url(app_id, backup_num)`
 
 - [ ] pg:connection-pooling:attach
 

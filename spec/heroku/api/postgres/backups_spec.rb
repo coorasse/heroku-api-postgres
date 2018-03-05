@@ -71,4 +71,20 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
       end
     end
   end
+
+  describe '#url' do
+    let(:app_id) { ENV['VALID_APP_ID'] }
+    let(:backup_num) do
+      client.backups.list(app_id).select do |backup|
+        backup[:from_type] == 'pg_dump' && backup[:to_type] == 'gof3r'
+      end.first[:num]
+    end
+    subject(:json_response) { client.backups.url(app_id, backup_num) }
+    context 'server returns 200' do
+      it 'returns the public url of a database' do
+        expect(json_response[:expires_at]).not_to be_nil
+        expect(json_response[:url]).not_to be_nil
+      end
+    end
+  end
 end

@@ -120,6 +120,16 @@ backup = backups_client.capture(database_id)
 
 returns a [Backup](docs/models.md#backup)
 
+#### Url
+Returns a temporary, public accessible URL to download a backup.
+Needs the `num` attribute of a Backup.
+
+```ruby
+backup_url = backups_client.url(app_id, backup_num)
+```
+
+returns a [BackupUrl](docs/models.md#backup_url)
+
 
 ### How do I get the database_id ?
 You can obtain a database id by calling the Heroku Platform API
