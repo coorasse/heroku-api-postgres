@@ -87,4 +87,24 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
       end
     end
   end
+
+  describe '#info' do
+    let(:app_id) { ENV['VALID_APP_ID'] }
+    let(:backup) do
+      client.backups.list(app_id).select do |backup|
+        backup[:from_type] == 'pg_dump' && backup[:to_type] == 'gof3r'
+      end.first
+    end
+
+    # can be called with num or id
+    subject(:json_response) { client.backups.info(app_id, backup[:num]) }
+
+    context 'server returns 200' do
+      it 'returns a backup' do
+        expect(json_response[:uuid]).not_to be_nil
+        expect(json_response[:from_type]).to eq 'pg_dump'
+        expect(json_response[:to_type]).to eq 'gof3r'
+      end
+    end
+  end
 end

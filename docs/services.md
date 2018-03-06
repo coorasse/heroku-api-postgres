@@ -17,7 +17,7 @@ The command returns immediately, without waiting for the capture to be completed
 
 - [ ] pg:backups:download
 
-- [ ] pg:backups:info
+- [x] pg:backups:info --> `client.backups.info(app_id, backup_id)`
 
 - [ ] pg:backups:restore
 

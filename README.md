@@ -80,6 +80,14 @@ returns a [Database](docs/models.md#database).
 backups_client = postgres_api_client.backups
 ```
 
+#### Info
+
+```ruby
+backups = backups_client.info(app_id, backup_id)
+```
+
+returns a [Backup](docs/models.md#backup).
+
 #### List
 
 ```ruby

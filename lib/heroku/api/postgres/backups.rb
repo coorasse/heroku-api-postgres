@@ -16,6 +16,10 @@ module Heroku
           @client.perform_get_request("/client/v11/apps/#{app_id}/transfers")
         end
 
+        def info(app_id, backup_id)
+          @client.perform_get_request("/client/v11/apps/#{app_id}/transfers/#{backup_id}")
+        end
+
         def schedules(database_id)
           @client.perform_get_request("/client/v11/databases/#{database_id}/transfer-schedules")
         end
