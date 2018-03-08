@@ -38,6 +38,16 @@ module Heroku
         def url(app_id, backup_num)
           @client.perform_post_request("/client/v11/apps/#{app_id}/transfers/#{backup_num}/actions/public-url")
         end
+
+        def wait(app_id, backup_id, options = { wait_interval: 3 })
+          waiting = true
+          while waiting do
+            backup = info(app_id, backup_id)
+            break if backup[:finished_at] && backup[:succeeded]
+            sleep(options[:wait_interval])
+          end
+          backup
+        end
       end
     end
   end

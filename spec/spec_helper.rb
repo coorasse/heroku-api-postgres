@@ -10,6 +10,7 @@ VCR.configure do |config|
   config.filter_sensitive_data('<HEROKU_OAUTH_TOKEN>') { ENV['HEROKU_OAUTH_TOKEN'] }
   config.filter_sensitive_data('<VALID_DATABASE_ID_WITH_SCHEDULES>') { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
   config.filter_sensitive_data('<VALID_APP_ID>') { ENV['VALID_APP_ID'] }
+  config.filter_sensitive_data('<VALID_APP_ID_WITH_DATABASE>') { ENV['VALID_APP_ID_WITH_DATABASE'] }
 
   # Removes all private data (Basic Auth, Set-Cookie headers...)
   config.before_record do |i|

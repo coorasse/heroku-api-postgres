@@ -39,7 +39,6 @@ Even if this gem does not require `platform-api` to be installed, you probably w
 ```ruby
 # from platform api gem
 platform_api_client = PlatformAPI.connect_oauth(ENV['HEROKU_OAUTH_TOKEN'])
-
 ```
 
 this gem client needs to be instantiated as well in a similar way
@@ -51,22 +50,13 @@ postgres_api_client = Heroku::Api::Postgres.connect_oauth(ENV['HEROKU_OAUTH_TOKE
 Look into [Models](docs/models.rb) for a detailed description of the JSON objects returned by the APIs.
 Those are the bare objects returned by the official Heroku API.
 
-#### Wait
-
-```ruby
-databases = postgres_api_client.wait(database_id, wait_interval: 5)
-```
-
-Waits for the given database to be ready. Polls every `wait_interval` seconds (default 3).
-
-
 ### Databases
 
 ```ruby
-databases_client = postgres_api_client.database
+databases_client = postgres_api_client.databases
 ```
 
-#### Info
+---
 
 ```ruby
 database_info = databases_client.info(database_id)
@@ -74,13 +64,23 @@ database_info = databases_client.info(database_id)
 
 returns a [Database](docs/models.md#database).
 
+---
+
+```ruby
+database = postgres_api_client.databases.wait(database_id, wait_interval: 5)
+```
+Waits for the given database to be ready.
+
+Polls every `wait_interval` seconds (default 3).
+
+
 ### Backups
 
 ```ruby
 backups_client = postgres_api_client.backups
 ```
 
-#### Info
+---
 
 ```ruby
 backups = backups_client.info(app_id, backup_id)
@@ -88,7 +88,7 @@ backups = backups_client.info(app_id, backup_id)
 
 returns a [Backup](docs/models.md#backup).
 
-#### List
+---
 
 ```ruby
 backups = backups_client.list(app_id)
@@ -100,15 +100,17 @@ The app_id can be either the name of your heroku app or the id.
 
 [Check official API](https://devcenter.heroku.com/articles/platform-api-reference#app)
 
-#### Schedules
+---
 
 ```ruby
 schedules = backups_client.schedules(database_id)
 ```
 
-returns an array of [Schedule](docs/models.md#schedule)
+Returns all the backup schedules associated with the database.
 
-### Schedule
+Returns an array of [Schedule](docs/models.md#schedule)
+
+---
 
 ```ruby
 schedule = backups_client.schedule(database_id)
@@ -118,25 +120,33 @@ Schedules the backups at 00:00 UTC.
 
 Returns a [Schedule](docs/models.md#schedule)
 
+---
 
-#### Capture
-Captures a new backup for the given database
 
 ```ruby
 backup = backups_client.capture(database_id)
 ```
+Captures a new backup for the given database
 
-returns a [Backup](docs/models.md#backup)
+Returns a [Backup](docs/models.md#backup)
 
-#### Url
-Returns a temporary, public accessible URL to download a backup.
-Needs the `num` attribute of a Backup.
 
 ```ruby
 backup_url = backups_client.url(app_id, backup_num)
 ```
+Returns a temporary, public accessible URL to download a backup.
+Needs the `num` attribute of a Backup.
 
-returns a [BackupUrl](docs/models.md#backup_url)
+Returns a [BackupUrl](docs/models.md#backup_url)
+
+---
+
+```ruby
+backup = postgres_api_client.backups.wait(app_id, backup_id, wait_interval: 5)
+```
+Waits for the given backup to be ready.
+
+Polls every `wait_interval` seconds (default 3).
 
 
 ### How do I get the database_id ?

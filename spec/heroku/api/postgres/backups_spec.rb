@@ -107,4 +107,20 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
       end
     end
   end
+
+  describe '#wait' do
+    let(:app_id) {ENV['VALID_APP_ID_WITH_DATABASE'] }
+    let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
+
+    context 'server returns 200' do
+      it 'waits for the given backup to be available and returns the backup' do
+        backup = client.backups.capture(database_id)
+        backup = client.backups.wait(app_id, backup[:num], wait_interval: 0.01)
+
+        expect(backup[:uuid]).not_to be_nil
+        expect(backup[:finished_at]).not_to be_nil
+        expect(backup[:succeeded]).to eq true
+      end
+    end
+  end
 end
