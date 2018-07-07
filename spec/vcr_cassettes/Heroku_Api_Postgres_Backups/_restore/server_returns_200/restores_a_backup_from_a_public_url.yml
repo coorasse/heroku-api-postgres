@@ -1,0 +1,1629 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://postgres-starter-api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_SCHEDULES>/restores
+    body:
+      encoding: UTF-8
+      string: '{"backup_url":"<VALID_DUMP_URL>"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Length:
+      - '606'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:13 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":null,"canceled_at":null,"updated_at":null,"finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:13 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '629'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:14 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":null,"finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:14 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:15 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:15 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:15 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:16 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:15 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:16 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:17 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:15 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:17 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:18 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:15 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:18 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:19 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:15 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:19 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:20 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:20 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:20 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:21 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:20 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:21 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:22 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:20 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:22 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:23 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:20 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:23 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:24 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:20 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:24 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:25 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:20 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:25 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:27 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:25 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:27 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:28 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:25 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:28 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:28 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:25 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:28 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:29 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:25 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:29 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:31 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:30 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:31 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:32 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:30 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:32 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:33 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:30 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:33 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:34 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:30 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:34 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '652'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:34 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:30 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:35 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '657'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:35 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":524288,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:35 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:36 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '657'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:36 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":524288,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:35 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:36 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '657'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:37 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":524288,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:35 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:37 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '657'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:38 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":524288,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:35 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:38 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '657'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:39 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":524288,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:35 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:39 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:40 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":2621440,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:40 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:40 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:41 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":2621440,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:40 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:41 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:42 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":2621440,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:40 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:42 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:43 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":2621440,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:40 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:43 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:44 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":2621440,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:40 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:44 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:45 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":5242880,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:45 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:45 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:47 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":5242880,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:45 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:47 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:48 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":5242880,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:45 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:48 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:49 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":5242880,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:45 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:49 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:51 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":7688794,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:50 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:51 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:52 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":7688794,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:50 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:52 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:54 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":7688794,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:50 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:54 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:55 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":7688794,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:50 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:55 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:56 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":7688794,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:55 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:56 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:56 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":7688794,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:55 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:57 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '658'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:57 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":7688794,"succeeded":null,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:55 +0000","finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:48:58 GMT
+- request:
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/168
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+      Host:
+      - postgres-starter-api.heroku.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '681'
+      Content-Type:
+      - application/json
+      Via:
+      - 1.1 spaces-router (30e8f6919785)
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 07 Jul 2018 07:48:59 GMT
+    body:
+      encoding: UTF-8
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":168,"from_name":"BACKUP","from_type":"htcat","from_url":"<VALID_DUMP_URL>","to_name":"DATABASE","to_type":"pg_restore","to_url":"postgres://username:password@database_url:port/schema_name","options":{},"source_bytes":null,"processed_bytes":7688794,"succeeded":true,"warnings":0,"created_at":"2018-07-07
+        07:48:13 +0000","started_at":"2018-07-07 07:48:14 +0000","canceled_at":null,"updated_at":"2018-07-07
+        07:48:57 +0000","finished_at":"2018-07-07 07:48:57 +0000","deleted_at":null,"purged_at":null,"num_keep":5}'
+    http_version: 
+  recorded_at: Sat, 07 Jul 2018 07:49:00 GMT
+recorded_with: VCR 4.0.0

@@ -123,4 +123,33 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
       end
     end
   end
+
+  describe '#restore' do
+    let(:app_id) {ENV['VALID_APP_ID_WITH_DATABASE'] }
+    let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
+    let(:dump_url) { ENV['VALID_DUMP_URL'] }
+
+    context 'server returns 200' do
+      it 'restores a backup from a public url' do
+        restore = client.backups.restore(database_id, dump_url)
+
+        expect(restore[:uuid]).not_to be_nil
+        expect(restore[:from_name]).to eq 'BACKUP'
+        expect(restore[:from_type]).to eq 'htcat'
+        expect(restore[:from_url]).to eq dump_url
+        expect(restore[:to_name]).to eq 'DATABASE'
+        expect(restore[:to_type]).to eq 'pg_restore'
+        expect(restore[:succeeded]).to be_nil
+
+        called = false
+        restore = client.backups.wait(app_id, restore[:num], wait_interval: 0.01) do |info|
+          called = true
+        end
+
+        expect(called).to be true
+        expect(restore[:finished_at]).not_to be_nil
+        expect(restore[:succeeded]).to eq true
+      end
+    end
+  end
 end

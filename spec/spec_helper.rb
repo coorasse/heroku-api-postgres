@@ -7,10 +7,10 @@ VCR.configure do |config|
   config.cassette_library_dir = 'spec/vcr_cassettes'
   config.hook_into :webmock
   config.configure_rspec_metadata!
-  config.filter_sensitive_data('<HEROKU_OAUTH_TOKEN>') { ENV['HEROKU_OAUTH_TOKEN'] }
-  config.filter_sensitive_data('<VALID_DATABASE_ID_WITH_SCHEDULES>') { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
-  config.filter_sensitive_data('<VALID_APP_ID>') { ENV['VALID_APP_ID'] }
-  config.filter_sensitive_data('<VALID_APP_ID_WITH_DATABASE>') { ENV['VALID_APP_ID_WITH_DATABASE'] }
+  sensible_variables = File.read('.env').each_line.map { |l| l.split('=').first }
+  sensible_variables.each do |variable|
+    config.filter_sensitive_data("<#{variable}>") { ENV[variable] }
+  end
 
   # Removes all private data (Basic Auth, Set-Cookie headers...)
   config.before_record do |i|

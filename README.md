@@ -142,11 +142,28 @@ Returns a [BackupUrl](docs/models.md#backup_url)
 ---
 
 ```ruby
+backup = backups_client.restore(database_id, dump_url)
+```
+Restores a dump from a public URL.
+
+Returns a [Backup](docs/models.md#backup)
+
+---
+
+```ruby
 backup = postgres_api_client.backups.wait(app_id, backup_id, wait_interval: 5)
 ```
-Waits for the given backup to be ready.
+Waits for the given backup/restore to be ready.
 
 Polls every `wait_interval` seconds (default 3).
+
+You can pass a block to be executed at each interval:
+
+```ruby
+backup = postgres_api_client.backups.wait(app_id, backup_id) do |info|
+    puts "Processed #{info[:processed_bytes]} bytes"
+end
+```
 
 
 ### How do I get the database_id ?

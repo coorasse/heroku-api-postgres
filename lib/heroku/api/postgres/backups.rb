@@ -40,13 +40,17 @@ module Heroku
         end
 
         def wait(app_id, backup_id, options = { wait_interval: 3 })
-          waiting = true
-          while waiting do
+          while true do
             backup = info(app_id, backup_id)
+            yield(backup)
             break if backup[:finished_at] && backup[:succeeded]
             sleep(options[:wait_interval])
           end
           backup
+        end
+
+        def restore(database_id, backup_url)
+          @client.perform_post_request("/client/v11/databases/#{database_id}/restores", backup_url: backup_url)
         end
       end
     end

@@ -36,9 +36,18 @@ module Heroku
           parse_response(response)
         end
 
+        def host_for(database)
+          starter_plan?(database) ? 'https://postgres-starter-api.heroku.com' : 'https://postgres-api.heroku.com'
+        end
+
+        def starter_plan?(database)
+          database[:plan].match(/(dev|basic)$/)
+        end
+
         private
-        def build_uri(path)
-          URI.join(@basic_url, path)
+
+        def build_uri(path, host: @basic_url)
+          URI.join(host, path)
         end
 
         def set_headers(req)
