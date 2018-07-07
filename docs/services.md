@@ -19,7 +19,11 @@ The command returns immediately, without waiting for the capture to be completed
 
 - [x] pg:backups:info --> `client.backups.info(app_id, backup_id)`
 
-- [ ] pg:backups:restore
+- [x] pg:backups:restore --> `client.backups.restore(database_id, dump_url)`
+The command works only with public URLs. It does not support all the features of the original
+`heroku pg:backups:restore` command, like restoring directly from another database.
+The command returns immediately, without waiting for the capture to be completed.
+You can use the command `client.backups.wait(app_id, restore[:num])` to wait for it to be ready.
 
 - [x] pg:backups:schedule --> `client.backups.schedule(database_id)`
 
