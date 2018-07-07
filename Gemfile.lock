@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    heroku-api-postgres (0.8.0)
+    heroku-api-postgres (0.9.0)
 
 GEM
   remote: https://rubygems.org/
@@ -64,4 +64,4 @@ DEPENDENCIES
   webmock (~> 3.3.0)
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
