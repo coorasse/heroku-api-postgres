@@ -42,7 +42,7 @@ module Heroku
         def wait(app_id, backup_id, options = { wait_interval: 3 })
           while true do
             backup = info(app_id, backup_id)
-            yield(backup)
+            yield(backup) if block_given?
             break if backup[:finished_at] && backup[:succeeded]
             sleep(options[:wait_interval])
           end
