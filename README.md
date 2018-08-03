@@ -47,7 +47,7 @@ this gem client needs to be instantiated as well in a similar way
 postgres_api_client = Heroku::Api::Postgres.connect_oauth(ENV['HEROKU_OAUTH_TOKEN'])
 ```
 
-Look into [Models](docs/models.rb) for a detailed description of the JSON objects returned by the APIs.
+Look into [Models](docs/models.md) for a detailed description of the JSON objects returned by the APIs.
 Those are the bare objects returned by the official Heroku API.
 
 ### Databases
@@ -200,4 +200,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Heroku::Api::Postgres project’s codebases, issue trackers, chat rooms and mailing lists is
-expected to follow the [code of conduct](https://github.com/[USERNAME]/heroku-api-postgres/blob/master/CODE_OF_CONDUCT.md).
+expected to follow the [code of conduct](https://github.com/coorasse/heroku-api-postgres/blob/master/CODE_OF_CONDUCT.md).
