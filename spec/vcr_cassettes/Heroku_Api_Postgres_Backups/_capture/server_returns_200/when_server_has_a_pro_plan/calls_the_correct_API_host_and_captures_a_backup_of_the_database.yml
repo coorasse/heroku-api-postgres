@@ -27,7 +27,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 03 Dec 2018 15:45:52 GMT
+      - Mon, 03 Dec 2018 16:00:13 GMT
       Etag:
       - '"0caa4cc175821f820d5e35e28e5277c8"'
       Last-Modified:
@@ -39,9 +39,9 @@ http_interactions:
       Ratelimit-Multiplier:
       - '1'
       Ratelimit-Remaining:
-      - '4499'
+      - '4493'
       Request-Id:
-      - 7aa08c93-1925-4274-b102-2a8412a78956,e9d665da-c4ed-2777-0862-4faf2d69bb2e,0f91795d-3d75-8173-c176-7c09749c8084
+      - b408da82-f529-4ce3-9b79-45c919cc9606,5a8a289b-11ef-1d38-3177-7b1169ae92c8,e71ead4e-70c5-f69b-5f58-e199b7b2878b
       Vary:
       - Accept-Encoding
       Via:
@@ -49,22 +49,22 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.131337774'
+      - '0.094617126'
     body:
       encoding: ASCII-8BIT
       string: '[{"actions":[],"config_vars":[],"created_at":"2018-03-26T16:56:42Z","id":"49445b92-a0ab-4205-901b-ed7cbe4dc0db","name":"deployhooks-vertical-24377","addon_service":{"id":"35067aa6-e8af-48b0-8bd3-f5ef5cfd9e4d","name":"deployhooks"},"plan":{"id":"6eb6eeea-c73c-4ee6-8e82-47db1b26d2a1","name":"deployhooks:http"},"billing_entity":{"id":"<VALID_APP_ID_WITH_DATABASE>","name":"nikyshandmade-master","type":"app"},"provider_id":"181504","state":"provisioned","updated_at":"2018-11-14T21:01:57Z","web_url":"https://addons-sso.heroku.com/apps/<VALID_APP_ID_WITH_DATABASE>/addons/49445b92-a0ab-4205-901b-ed7cbe4dc0db","billed_price":{"cents":0,"contract":false,"unit":"month"},"app":{"id":"<VALID_APP_ID_WITH_DATABASE>","name":"nikyshandmade-master"}},{"actions":[{"id":"e9d0e21e-f6eb-4ae7-bf89-f473879149c0","label":"All
         Events","action":"events","url":null,"requires_owner":null},{"id":"a43b6204-ece2-4a85-817f-fda239cd6377","label":"Dashboard","action":"dashboard","url":null,"requires_owner":null},{"id":"7a58726d-f548-4830-bd3b-fdd917c61595","label":"Settings","action":"settings","url":null,"requires_owner":null}],"config_vars":["PAPERTRAIL_API_TOKEN"],"created_at":"2018-10-23T11:51:48Z","id":"c2aad589-13cf-43ee-b77c-d809055321d4","name":"papertrail-slippery-21080","addon_service":{"id":"f6f28cb5-78ad-4ec7-896d-16462b8202fd","name":"papertrail"},"plan":{"id":"75e5e5d9-e71c-4693-818f-db1de34d761b","name":"papertrail:choklad"},"billing_entity":{"id":"<VALID_APP_ID_WITH_DATABASE>","name":"nikyshandmade-master","type":"app"},"provider_id":"2470808922","state":"provisioned","updated_at":"2018-11-15T00:31:16Z","web_url":"https://addons-sso.heroku.com/apps/<VALID_APP_ID_WITH_DATABASE>/addons/c2aad589-13cf-43ee-b77c-d809055321d4","billed_price":{"cents":0,"contract":false,"unit":"month"},"app":{"id":"<VALID_APP_ID_WITH_DATABASE>","name":"nikyshandmade-master"}},{"actions":[{"id":"f95decb9-ed43-4b32-8bbf-dc4f2b4da10c","label":"Create
         Dataclip","action":null,"url":"http://dataclips.heroku.com/clips/new?heroku_resource_id=:resource_id&heroku_id=:resource_uuid","requires_owner":null},{"id":"3117e49b-a7a5-4ba8-a7ad-8ade2edd01e5","label":"Upgrade
         instructions","action":null,"url":"https://devcenter.heroku.com/articles/upgrading-heroku-postgres-databases","requires_owner":null},{"id":"5cf6ddda-46f6-49c3-97b8-5967e12b0f2c","label":"Capture
-        backup","action":null,"url":"https://data.heroku.com/datastore/:resource_uuid?heroku_action=capture_backup","requires_owner":null}],"config_vars":["DATABASE_URL"],"created_at":"2017-05-25T19:13:39Z","id":"<VALID_DATABASE_ID_WITH_SCHEDULES>","name":"postgresql-cubic-87383","addon_service":{"id":"6c67493d-8fc2-4cd4-9161-4f1ec11cbe69","name":"heroku-postgresql"},"plan":{"id":"062a1cc7-f79f-404c-9f91-135f70175577","name":"heroku-postgresql:hobby-dev"},"billing_entity":{"id":"<VALID_APP_ID_WITH_DATABASE>","name":"nikyshandmade-master","type":"app"},"provider_id":"12129308","state":"provisioned","updated_at":"2018-11-14T17:31:53Z","web_url":"https://addons-sso.heroku.com/apps/<VALID_APP_ID_WITH_DATABASE>/addons/<VALID_DATABASE_ID_WITH_SCHEDULES>","billed_price":{"cents":0,"contract":false,"unit":"month"},"app":{"id":"<VALID_APP_ID_WITH_DATABASE>","name":"nikyshandmade-master"}},{"actions":[],"config_vars":[],"created_at":"2017-11-07T18:20:47Z","id":"47b4f568-0221-493e-9471-aa12451090fe","name":"scheduler-vertical-49045","addon_service":{"id":"3342342e-c3d3-40b9-a839-a751c1dd89bb","name":"scheduler"},"plan":{"id":"86fed9d0-eccc-4007-9459-f807ceadf7a3","name":"scheduler:standard"},"billing_entity":{"id":"<VALID_APP_ID_WITH_DATABASE>","name":"nikyshandmade-master","type":"app"},"provider_id":"395547","state":"provisioned","updated_at":"2018-11-14T19:24:04Z","web_url":"https://addons-sso.heroku.com/apps/<VALID_APP_ID_WITH_DATABASE>/addons/47b4f568-0221-493e-9471-aa12451090fe","billed_price":{"cents":0,"contract":false,"unit":"month"},"app":{"id":"<VALID_APP_ID_WITH_DATABASE>","name":"nikyshandmade-master"}}]'
+        backup","action":null,"url":"https://data.heroku.com/datastore/:resource_uuid?heroku_action=capture_backup","requires_owner":null}],"config_vars":["DATABASE_URL"],"created_at":"2017-05-25T19:13:39Z","id":"<VALID_DATABASE_ID_WITH_SCHEDULES>","name":"postgresql-cubic-87383","addon_service":{"id":"6c67493d-8fc2-4cd4-9161-4f1ec11cbe69","name":"heroku-postgresql"},"plan":{"id":"062a1cc7-f79f-404c-9f91-135f70175577","name":"heroku-postgresql:standard-0"},"billing_entity":{"id":"<VALID_APP_ID_WITH_DATABASE>","name":"nikyshandmade-master","type":"app"},"provider_id":"12129308","state":"provisioned","updated_at":"2018-11-14T17:31:53Z","web_url":"https://addons-sso.heroku.com/apps/<VALID_APP_ID_WITH_DATABASE>/addons/<VALID_DATABASE_ID_WITH_SCHEDULES>","billed_price":{"cents":0,"contract":false,"unit":"month"},"app":{"id":"<VALID_APP_ID_WITH_DATABASE>","name":"nikyshandmade-master"}},{"actions":[],"config_vars":[],"created_at":"2017-11-07T18:20:47Z","id":"47b4f568-0221-493e-9471-aa12451090fe","name":"scheduler-vertical-49045","addon_service":{"id":"3342342e-c3d3-40b9-a839-a751c1dd89bb","name":"scheduler"},"plan":{"id":"86fed9d0-eccc-4007-9459-f807ceadf7a3","name":"scheduler:standard"},"billing_entity":{"id":"<VALID_APP_ID_WITH_DATABASE>","name":"nikyshandmade-master","type":"app"},"provider_id":"395547","state":"provisioned","updated_at":"2018-11-14T19:24:04Z","web_url":"https://addons-sso.heroku.com/apps/<VALID_APP_ID_WITH_DATABASE>/addons/47b4f568-0221-493e-9471-aa12451090fe","billed_price":{"cents":0,"contract":false,"unit":"month"},"app":{"id":"<VALID_APP_ID_WITH_DATABASE>","name":"nikyshandmade-master"}}]'
     http_version:
-  recorded_at: Mon, 03 Dec 2018 15:45:52 GMT
+  recorded_at: Mon, 03 Dec 2018 16:00:13 GMT
 - request:
-    method: get
-    uri: https://postgres-starter-api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_SCHEDULES>/transfer-schedules
+    method: post
+    uri: https://postgres-api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_SCHEDULES>/backups
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -74,11 +74,11 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 201
+      message: Created
     headers:
       Content-Length:
-      - '2'
+      - '695'
       Content-Type:
       - application/json
       Via:
@@ -86,11 +86,11 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Mon, 03 Dec 2018 15:45:53 GMT
+      - Mon, 03 Dec 2018 16:00:14 GMT
     body:
       encoding: UTF-8
-      string: '[{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","name":"DATABASE_URL","hour":2,"days":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"timezone":"Europe/Zurich","created_at":"2018-01-09
-              11:28:57 +0000","updated_at":"2018-03-03 01:17:57 +0000","deleted_at":null,"retain_weeks":1,"retain_months":0}]'
+      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":11,"from_name":"DATABASE","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"BACKUP","to_type":"gof3r","to_url":"https://bucket_name.s3.amazonaws.com/resource_address","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2018-12-03
+        16:00:14 +0000","started_at":null,"canceled_at":null,"updated_at":null,"finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":2}'
     http_version:
-  recorded_at: Mon, 03 Dec 2018 15:45:53 GMT
+  recorded_at: Mon, 03 Dec 2018 16:00:14 GMT
 recorded_with: VCR 4.0.0
