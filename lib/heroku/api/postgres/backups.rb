@@ -28,7 +28,7 @@ module Heroku
 
         def schedule(app_id, database_id)
           @client.perform_post_request("/client/v11/databases/#{database_id}/transfer-schedules",
-                                       { hour: 00,
+                                       { hour: 0o0,
                                          timezone: 'UTC',
                                          schedule_name: 'DATABASE_URL' }, host: db_host(app_id))
         end
@@ -42,10 +42,12 @@ module Heroku
         end
 
         def wait(app_id, backup_id, options = { wait_interval: 3 })
-          while true do
+          backup = nil
+          loop do
             backup = info(app_id, backup_id)
             yield(backup) if block_given?
             break if backup[:finished_at] && backup[:succeeded]
+
             sleep(options[:wait_interval])
           end
           backup

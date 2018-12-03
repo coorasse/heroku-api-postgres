@@ -16,9 +16,10 @@ module Heroku
         # perform_get_request "/client/v11/databases/#{database_id}/wait_status"
         def wait(database_id, options = { wait_interval: 3 })
           waiting = true
-          while waiting do
+          while waiting
             database = info(database_id)
             break unless database[:waiting?]
+
             sleep(options[:wait_interval])
           end
           database

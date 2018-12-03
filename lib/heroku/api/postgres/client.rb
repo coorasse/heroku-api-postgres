@@ -24,7 +24,7 @@ module Heroku
         def perform_get_request(path, options = {})
           url = build_uri(path, options)
           req = Net::HTTP::Get.new(url)
-          set_headers(req)
+          add_auth_headers(req)
           response = start_request(req, url)
           parse_response(response)
         end
@@ -32,7 +32,7 @@ module Heroku
         def perform_post_request(path, params = {}, options = {})
           url = build_uri(path, options)
           req = Net::HTTP::Post.new(url)
-          set_headers(req)
+          add_auth_headers(req)
           req.body = params.to_json
           response = start_request(req, url)
           parse_response(response)
@@ -44,7 +44,7 @@ module Heroku
           URI.join(host, path)
         end
 
-        def set_headers(req)
+        def add_auth_headers(req)
           req['Accept'] = 'application/vnd.heroku+json; version=3'
           req.basic_auth '', @oauth_client_key
         end
@@ -52,7 +52,7 @@ module Heroku
         def start_request(req, url)
           http_new = Net::HTTP.new(url.hostname, url.port)
           http_new.use_ssl = true
-          response = http_new.start { |http| http.request(req) }
+          http_new.start { |http| http.request(req) }
         end
 
         def parse_response(response)

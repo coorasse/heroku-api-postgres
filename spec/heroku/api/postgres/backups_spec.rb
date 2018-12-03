@@ -58,6 +58,16 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
         expect(json_response[:to_type]).to eq 'gof3r'
         expect(json_response[:succeeded]).to be_nil
       end
+
+      context 'when server has a pro plan' do
+        let(:database_id) { ENV['VALID_DATABASE_ID_WITH_PRO_PLAN'] }
+        it 'calls the correct API host and captures a backup of the database' do
+          expect(json_response[:uuid]).not_to be_nil
+          expect(json_response[:from_type]).to eq 'pg_dump'
+          expect(json_response[:to_type]).to eq 'gof3r'
+          expect(json_response[:succeeded]).to be_nil
+        end
+      end
     end
   end
 
@@ -112,7 +122,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   end
 
   describe '#wait' do
-    let(:app_id) {ENV['VALID_APP_ID_WITH_DATABASE'] }
+    let(:app_id) { ENV['VALID_APP_ID_WITH_DATABASE'] }
     let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
 
     context 'server returns 200' do
@@ -128,7 +138,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   end
 
   describe '#restore' do
-    let(:app_id) {ENV['VALID_APP_ID_WITH_DATABASE'] }
+    let(:app_id) { ENV['VALID_APP_ID_WITH_DATABASE'] }
     let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
     let(:dump_url) { ENV['VALID_DUMP_URL'] }
 
@@ -145,7 +155,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
         expect(restore[:succeeded]).to be_nil
 
         called = false
-        restore = client.backups.wait(app_id, restore[:num], wait_interval: 0.01) do |info|
+        restore = client.backups.wait(app_id, restore[:num], wait_interval: 0.01) do |_info|
           called = true
         end
 
