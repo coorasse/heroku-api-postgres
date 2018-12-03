@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.heroku.com/apps/<VALID_APP_ID_WITH_DATABASE>/addons
+    uri: https://api.heroku.com/apps/<VALID_APP_ID>/addons
     body:
       encoding: US-ASCII
       string: ''
