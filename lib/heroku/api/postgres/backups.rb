@@ -53,8 +53,9 @@ module Heroku
           backup
         end
 
-        def restore(database_id, backup_url)
-          @client.perform_post_request("/client/v11/databases/#{database_id}/restores", backup_url: backup_url)
+        def restore(app_id, database_id, backup_url)
+          @client.perform_post_request("/client/v11/databases/#{database_id}/restores",
+                                       { backup_url: backup_url }, host: db_host(app_id))
         end
 
         private

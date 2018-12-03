@@ -144,7 +144,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
 
     context 'server returns 200' do
       it 'restores a backup from a public url' do
-        restore = client.backups.restore(database_id, dump_url)
+        restore = client.backups.restore(app_id, database_id, dump_url)
 
         expect(restore[:uuid]).not_to be_nil
         expect(restore[:from_name]).to eq 'BACKUP'
