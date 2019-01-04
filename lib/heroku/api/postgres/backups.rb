@@ -46,7 +46,7 @@ module Heroku
           loop do
             backup = info(app_id, backup_id)
             yield(backup) if block_given?
-            break if backup[:finished_at] && backup[:succeeded]
+            break if backup[:finished_at]
 
             sleep(options[:wait_interval])
           end
