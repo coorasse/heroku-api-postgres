@@ -1,5 +1,6 @@
 require 'net/http'
 require 'json'
+require 'platform-api'
 
 module Heroku
   module Api
@@ -20,19 +21,20 @@ module Heroku
           @client.perform_get_request("/client/v11/apps/#{app_id}/transfers/#{backup_id}")
         end
 
-        def schedules(database_id)
-          @client.perform_get_request("/client/v11/databases/#{database_id}/transfer-schedules")
+        def schedules(app_id, database_id)
+          @client.perform_get_request("/client/v11/databases/#{database_id}/transfer-schedules",
+                                      host: db_host(app_id))
         end
 
-        def schedule(database_id)
+        def schedule(app_id, database_id)
           @client.perform_post_request("/client/v11/databases/#{database_id}/transfer-schedules",
-                                       hour: 00,
-                                       timezone: 'UTC',
-                                       schedule_name: 'DATABASE_URL')
+                                       { hour: 0o0,
+                                         timezone: 'UTC',
+                                         schedule_name: 'DATABASE_URL' }, host: db_host(app_id))
         end
 
-        def capture(database_id)
-          @client.perform_post_request("/client/v11/databases/#{database_id}/backups")
+        def capture(app_id, database_id)
+          @client.perform_post_request("/client/v11/databases/#{database_id}/backups", {}, host: db_host(app_id))
         end
 
         def url(app_id, backup_num)
@@ -40,17 +42,37 @@ module Heroku
         end
 
         def wait(app_id, backup_id, options = { wait_interval: 3 })
-          while true do
+          backup = nil
+          loop do
             backup = info(app_id, backup_id)
             yield(backup) if block_given?
             break if backup[:finished_at] && backup[:succeeded]
+
             sleep(options[:wait_interval])
           end
           backup
         end
 
-        def restore(database_id, backup_url)
-          @client.perform_post_request("/client/v11/databases/#{database_id}/restores", backup_url: backup_url)
+        def restore(app_id, database_id, backup_url)
+          @client.perform_post_request("/client/v11/databases/#{database_id}/restores",
+                                       { backup_url: backup_url }, host: db_host(app_id))
+        end
+
+        private
+
+        def databases
+          @databases ||= Databases.new(@client)
+        end
+
+        def db_host(app_id)
+          database = heroku_client.addon.list_by_app(app_id).find do |addon|
+            addon['addon_service']['name'] == 'heroku-postgresql'
+          end
+          databases.host_for(database)
+        end
+
+        def heroku_client
+          @heroku_client ||= PlatformAPI.connect_oauth(@client.oauth_client_key)
         end
       end
     end

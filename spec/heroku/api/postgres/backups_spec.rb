@@ -19,8 +19,9 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   end
 
   describe '#schedules' do
+    let(:app_id) { ENV['VALID_APP_ID'] }
     let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
-    subject(:json_response) { client.backups.schedules(database_id) }
+    subject(:json_response) { client.backups.schedules(app_id, database_id) }
     context 'server returns 404' do
       let(:oauth_token) { 'invalid_key' }
       it 'returns an error in json format' do
@@ -47,8 +48,9 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   end
 
   describe '#capture' do
+    let(:app_id) { ENV['VALID_APP_ID'] }
     let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
-    subject(:json_response) { client.backups.capture(database_id) }
+    subject(:json_response) { client.backups.capture(app_id, database_id) }
     context 'server returns 200' do
       it 'captures a backup of the database' do
         expect(json_response[:uuid]).not_to be_nil
@@ -56,12 +58,23 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
         expect(json_response[:to_type]).to eq 'gof3r'
         expect(json_response[:succeeded]).to be_nil
       end
+
+      context 'when server has a pro plan' do
+        let(:database_id) { ENV['VALID_DATABASE_ID_WITH_PRO_PLAN'] }
+        it 'calls the correct API host and captures a backup of the database' do
+          expect(json_response[:uuid]).not_to be_nil
+          expect(json_response[:from_type]).to eq 'pg_dump'
+          expect(json_response[:to_type]).to eq 'gof3r'
+          expect(json_response[:succeeded]).to be_nil
+        end
+      end
     end
   end
 
   describe '#schedule' do
+    let(:app_id) { ENV['VALID_APP_ID'] }
     let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
-    subject(:json_response) { client.backups.schedule(database_id) }
+    subject(:json_response) { client.backups.schedule(app_id, database_id) }
     context 'server returns 200' do
       it 'creates a schedule for the given database' do
         expect(json_response[:uuid]).not_to be_nil
@@ -109,12 +122,12 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   end
 
   describe '#wait' do
-    let(:app_id) {ENV['VALID_APP_ID_WITH_DATABASE'] }
+    let(:app_id) { ENV['VALID_APP_ID_WITH_DATABASE'] }
     let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
 
     context 'server returns 200' do
       it 'waits for the given backup to be available and returns the backup' do
-        backup = client.backups.capture(database_id)
+        backup = client.backups.capture(app_id, database_id)
         backup = client.backups.wait(app_id, backup[:num], wait_interval: 0.01)
 
         expect(backup[:uuid]).not_to be_nil
@@ -125,13 +138,13 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   end
 
   describe '#restore' do
-    let(:app_id) {ENV['VALID_APP_ID_WITH_DATABASE'] }
+    let(:app_id) { ENV['VALID_APP_ID_WITH_DATABASE'] }
     let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
     let(:dump_url) { ENV['VALID_DUMP_URL'] }
 
     context 'server returns 200' do
       it 'restores a backup from a public url' do
-        restore = client.backups.restore(database_id, dump_url)
+        restore = client.backups.restore(app_id, database_id, dump_url)
 
         expect(restore[:uuid]).not_to be_nil
         expect(restore[:from_name]).to eq 'BACKUP'
@@ -142,7 +155,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
         expect(restore[:succeeded]).to be_nil
 
         called = false
-        restore = client.backups.wait(app_id, restore[:num], wait_interval: 0.01) do |info|
+        restore = client.backups.wait(app_id, restore[:num], wait_interval: 0.01) do |_info|
           called = true
         end
 

@@ -103,7 +103,7 @@ The app_id can be either the name of your heroku app or the id.
 ---
 
 ```ruby
-schedules = backups_client.schedules(database_id)
+schedules = backups_client.schedules(app_id, database_id)
 ```
 
 Returns all the backup schedules associated with the database.
@@ -113,7 +113,7 @@ Returns an array of [Schedule](docs/models.md#schedule)
 ---
 
 ```ruby
-schedule = backups_client.schedule(database_id)
+schedule = backups_client.schedule(app_id, database_id)
 ```
 
 Schedules the backups at 00:00 UTC.
@@ -124,7 +124,7 @@ Returns a [Schedule](docs/models.md#schedule)
 
 
 ```ruby
-backup = backups_client.capture(database_id)
+backup = backups_client.capture(app_id, database_id)
 ```
 Captures a new backup for the given database
 
@@ -142,7 +142,7 @@ Returns a [BackupUrl](docs/models.md#backup_url)
 ---
 
 ```ruby
-backup = backups_client.restore(database_id, dump_url)
+backup = backups_client.restore(app_id, database_id, dump_url)
 ```
 Restores a dump from a public URL.
 
@@ -180,7 +180,9 @@ Check also the [Offical API](https://devcenter.heroku.com/articles/platform-api-
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies.
-Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Then, run `rake spec` to run the tests. 
+You can run `bin/check` to run linter and the tests together.
+You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`.
 To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`,
