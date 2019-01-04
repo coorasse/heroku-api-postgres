@@ -34,14 +34,7 @@ Or install it yourself as:
 
 ## Usage
 
-Even if this gem does not require `platform-api` to be installed, you probably want to have it installed as well.
-
-```ruby
-# from platform api gem
-platform_api_client = PlatformAPI.connect_oauth(ENV['HEROKU_OAUTH_TOKEN'])
-```
-
-this gem client needs to be instantiated as well in a similar way
+This gem client needs to be instantiated in a similar way to the PlatformAPI
 
 ```ruby
 postgres_api_client = Heroku::Api::Postgres.connect_oauth(ENV['HEROKU_OAUTH_TOKEN'])
@@ -69,10 +62,10 @@ returns a [Database](docs/models.md#database).
 ```ruby
 database = postgres_api_client.databases.wait(database_id, wait_interval: 5)
 ```
+
 Waits for the given database to be ready.
 
 Polls every `wait_interval` seconds (default 3).
-
 
 ### Backups
 
