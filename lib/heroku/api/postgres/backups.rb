@@ -37,7 +37,14 @@ module Heroku
           @client.perform_post_request("/client/v11/databases/#{database_id}/backups", {}, host: db_host(app_id))
         end
 
-        def url(app_id, backup_num)
+        def url(app_id, backup_num = nil)
+          unless backup_num
+            transfers = list(app_id)
+            last_transfer =
+              transfers.select { |t| t[:succeeded] && t[:to_type] == 'gof3r' }
+                       .max_by { |t| t[:created_at] }
+            backup_num = last_transfer[:num]
+          end
           @client.perform_post_request("/client/v11/apps/#{app_id}/transfers/#{backup_num}/actions/public-url")
         end
 
