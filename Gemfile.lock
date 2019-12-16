@@ -15,7 +15,7 @@ GEM
     diff-lcs (1.3)
     dotenv (2.5.0)
     erubis (2.7.0)
-    excon (0.62.0)
+    excon (0.71.0)
     hashdiff (0.3.7)
     heroics (0.0.25)
       erubis (~> 2.0)
