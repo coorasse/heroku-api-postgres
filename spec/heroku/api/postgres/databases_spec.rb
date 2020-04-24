@@ -3,8 +3,9 @@ RSpec.describe Heroku::Api::Postgres::Databases, :vcr do
   let(:client) { Heroku::Api::Postgres.connect_oauth(oauth_token) }
 
   describe '#info' do
+    let(:app_id) { ENV['VALID_APP_ID'] }
     let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
-    subject(:json_response) { client.databases.info(database_id) }
+    subject(:json_response) { client.databases.info(app_id, database_id) }
 
     context 'server returns 404' do
       let(:oauth_token) { 'invalid_key' }
@@ -23,8 +24,9 @@ RSpec.describe Heroku::Api::Postgres::Databases, :vcr do
   end
 
   describe '#wait' do
+    let(:app_id) { ENV['VALID_APP_ID'] }
     let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
-    subject(:json_response) { client.databases.wait(database_id, wait_interval: 4) }
+    subject(:json_response) { client.databases.wait(app_id, database_id, wait_interval: 4) }
 
     context 'server returns 200' do
       it 'waits for the given database to be available and returns the database' do

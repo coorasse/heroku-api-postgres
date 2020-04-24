@@ -65,10 +65,7 @@ module Heroku
         end
 
         def db_host(app_id)
-          database = heroku_client.addon.list_by_app(app_id).find do |addon|
-            addon['addon_service']['name'] == 'heroku-postgresql'
-          end
-          databases.host_for(database)
+          databases.host_for_app(app_id)
         end
 
         def heroku_client
