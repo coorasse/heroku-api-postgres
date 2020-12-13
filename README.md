@@ -1,5 +1,10 @@
 # Heroku::Api::Postgres
 
+**This gem has been extracted from https://db-backups.com.**
+
+**Your "one click" backup solution for Heroku apps.**
+
+
 Ruby library to invoke Heroku Postgres APIs.
 An extension to the official [Platform API]() gem to introduce the missing APIs for Postgres.
 
@@ -9,6 +14,7 @@ An extension to the official [Platform API]() gem to introduce the missing APIs 
 **This gem is not officialy supported**. We use the same APIs that the offical Heroku Toolbelt uses,
 therefore is unrealistic that a breaking change in the APIs would break it, since it means it would break
 both this gem and the official Heroku CLI.
+
 
 Not all APIs are implemented at the moment but we are working hard on implementing all of them.
 
@@ -168,7 +174,7 @@ databases = addons.select { |addon| addon['addon_service']['name'] == 'heroku-po
 databases_ids = databases.map{ |addon| addon['id'] }
 ```
 
-Check also the [Offical API](https://devcenter.heroku.com/articles/platform-api-reference#add-on)
+Check also the [Official API](https://devcenter.heroku.com/articles/platform-api-reference#add-on)
 
 ## Development
 
@@ -194,5 +200,5 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Heroku::Api::Postgres project’s codebases, issue trackers, chat rooms and mailing lists is
+Everyone interacting in the `Heroku::Api::Postgres` project’s codebases, issue trackers, chat rooms and mailing lists is
 expected to follow the [code of conduct](https://github.com/coorasse/heroku-api-postgres/blob/master/CODE_OF_CONDUCT.md).
