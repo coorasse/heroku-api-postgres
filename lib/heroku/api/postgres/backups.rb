@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'net/http'
 require 'json'
 require 'platform-api'
@@ -23,18 +25,20 @@ module Heroku
 
         def schedules(app_id, database_id)
           @client.perform_get_request("/client/v11/databases/#{database_id}/transfer-schedules",
-                                      host: db_host(app_id))
+                                      host: db_host(app_id, database_id))
         end
 
         def schedule(app_id, database_id)
           @client.perform_post_request("/client/v11/databases/#{database_id}/transfer-schedules",
                                        { hour: 0o0,
                                          timezone: 'UTC',
-                                         schedule_name: 'DATABASE_URL' }, host: db_host(app_id))
+                                         schedule_name: 'DATABASE_URL' }, host: db_host(app_id, database_id))
         end
 
         def capture(app_id, database_id)
-          @client.perform_post_request("/client/v11/databases/#{database_id}/backups", {}, host: db_host(app_id))
+          @client.perform_post_request("/client/v11/databases/#{database_id}/backups",
+                                       {},
+                                       host: db_host(app_id, database_id))
         end
 
         def url(app_id, backup_num)
@@ -55,24 +59,13 @@ module Heroku
 
         def restore(app_id, database_id, backup_url)
           @client.perform_post_request("/client/v11/databases/#{database_id}/restores",
-                                       { backup_url: backup_url }, host: db_host(app_id))
+                                       { backup_url: backup_url }, host: db_host(app_id, database_id))
         end
 
         private
 
-        def databases
-          @databases ||= Databases.new(@client)
-        end
-
-        def db_host(app_id)
-          database = heroku_client.addon.list_by_app(app_id).find do |addon|
-            addon['addon_service']['name'] == 'heroku-postgresql'
-          end
-          databases.host_for(database)
-        end
-
-        def heroku_client
-          @heroku_client ||= PlatformAPI.connect_oauth(@client.oauth_client_key)
+        def db_host(app_id, database_id)
+          @client.db_host(app_id, database_id)
         end
       end
     end

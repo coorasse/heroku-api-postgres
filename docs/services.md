@@ -3,13 +3,13 @@
 This list contains all postgres commands supported by the official CLI.
 Source: https://devcenter.heroku.com/articles/heroku-cli-commands
 
-- [x] pg --> `client.databases.info(database_id)`
+- [x] pg --> `client.databases.info(app_id, database_id)`
 
 - [x] pg:backups --> `client.backups.list(app_id)`
 
 - [ ] pg:backups:cancel
 
-- [x] pg:backups:capture ---> `client.backups.capture(database_id)`
+- [x] pg:backups:capture ---> `client.backups.capture(app_id, database_id)`
 The command returns immediately, without waiting for the capture to be completed.
 `--wait-interval` not implemented. `--snapshot` not implemented.
 
@@ -19,16 +19,16 @@ The command returns immediately, without waiting for the capture to be completed
 
 - [x] pg:backups:info --> `client.backups.info(app_id, backup_id)`
 
-- [x] pg:backups:restore --> `client.backups.restore(database_id, dump_url)`
+- [x] pg:backups:restore --> `client.backups.restore(app_id, database_id, dump_url)`
 The command works only with public URLs. It does not support all the features of the original
 `heroku pg:backups:restore` command, like restoring directly from another database.
 The command returns immediately, without waiting for the capture to be completed.
 You can use the command `client.backups.wait(app_id, restore[:num])` to wait for it to be ready.
 
-- [x] pg:backups:schedule --> `client.backups.schedule(database_id)`
+- [x] pg:backups:schedule --> `client.backups.schedule(app_id, database_id)`
 
 
-- [x] pg:backups:schedules --> `client.backups.schedules(database_id)`
+- [x] pg:backups:schedules --> `client.backups.schedules(app_id, database_id)`
 
 - [ ] pg:backups:unschedule
 
@@ -52,7 +52,7 @@ You can use the command `client.backups.wait(app_id, restore[:num])` to wait for
 
 - [ ] pg:diagnose
 
-- [x] pg:info --> `client.databases.info(database_id)`
+- [x] pg:info --> `client.databases.info(app_id, database_id)`
 
 - [ ] pg:kill
 
@@ -96,5 +96,5 @@ You can use the command `client.backups.wait(app_id, restore[:num])` to wait for
 
 - [ ] pg:upgrade
 
-- [x] pg:wait --> `client.wait(database_id)`
+- [x] pg:wait --> `client.wait(app_id, database_id)`
 Waits for a database to be ready.

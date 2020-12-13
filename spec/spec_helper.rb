@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'dotenv/load'
 require 'bundler/setup'
 require 'heroku/api/postgres'
