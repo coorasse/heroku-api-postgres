@@ -4,9 +4,8 @@
 
 **Your "one click" backup solution for Heroku apps.**
 
-
 Ruby library to invoke Heroku Postgres APIs.
-An extension to the official [Platform API]() gem to introduce the missing APIs for Postgres.
+An extension to the official [Platform API](https://github.com/heroku/platform-api) gem to introduce the missing APIs for Postgres.
 
 [![Build Status](https://travis-ci.org/coorasse/heroku-api-postgres.svg?branch=master)](https://travis-ci.org/coorasse/heroku-api-postgres)
 [![Maintainability](https://api.codeclimate.com/v1/badges/4eead5d8263c37498953/maintainability)](https://codeclimate.com/github/coorasse/heroku-api-postgres/maintainability)
@@ -40,7 +39,8 @@ Or install it yourself as:
 
 ## Usage
 
-This gem client needs to be instantiated in a similar way to the PlatformAPI
+This gem client needs to be instantiated in a similar way to the [PlatformAPI](https://github.com/heroku/platform-api).
+You can use the same oauth key that you use for the PlatformAPI.
 
 ```ruby
 postgres_api_client = Heroku::Api::Postgres.connect_oauth(ENV['HEROKU_OAUTH_TOKEN'])
@@ -58,7 +58,7 @@ databases_client = postgres_api_client.databases
 ---
 
 ```ruby
-database_info = databases_client.info(database_id)
+database_info = databases_client.info(app_id, database_id)
 ```
 
 returns a [Database](docs/models.md#database).
@@ -66,7 +66,7 @@ returns a [Database](docs/models.md#database).
 ---
 
 ```ruby
-database = postgres_api_client.databases.wait(database_id, wait_interval: 5)
+database = postgres_api_client.databases.wait(app_id, database_id, wait_interval: 5)
 ```
 
 Waits for the given database to be ready.
@@ -169,6 +169,7 @@ end
 You can obtain a database id by calling the Heroku Platform API
 
 ```ruby
+heroku = PlatformAPI.connect_oauth(ENV['HEROKU_OAUTH_TOKEN'])
 addons = heroku.addon.list
 databases = addons.select { |addon| addon['addon_service']['name'] == 'heroku-postgresql' }
 databases_ids = databases.map{ |addon| addon['id'] }
@@ -182,6 +183,9 @@ After checking out the repo, run `bin/setup` to install dependencies.
 Then, run `rake spec` to run the tests. 
 You can run `bin/check` to run linter and the tests together.
 You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+You need some app and database ids to run the tests and record the cassettes.
+In particular you need an app with a postgres database on the free plan and one with a database on a pro plan.
 
 To install this gem onto your local machine, run `bundle exec rake install`.
 To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`,
