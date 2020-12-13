@@ -27,7 +27,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 13 Dec 2020 16:22:41 GMT
+      - Sun, 13 Dec 2020 15:17:27 GMT
       Etag:
       - '"61d95ab7911fea10c087a3ad0b804323"'
       Last-Modified:
@@ -39,9 +39,9 @@ http_interactions:
       Ratelimit-Multiplier:
       - '1'
       Ratelimit-Remaining:
-      - '4495'
+      - '4499'
       Request-Id:
-      - ac497043-2ec6-44e4-8c51-0f15d4355092,caaaaf85-31cd-d39f-fffd-c837a780b646,9df291cb-82bd-1a7d-2c9d-e341d7f7f04c
+      - e6fab9b9-0110-4f13-82be-f3b673d7b64d,a3926aa1-6aff-42c0-ab8a-723f81b52a54,a64e6678-2c3b-df3b-2667-30a00d066fc0
       Vary:
       - Authorization,Accept-Encoding
       Via:
@@ -49,7 +49,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.0691737'
+      - '0.075366742'
     body:
       encoding: ASCII-8BIT
       string: '[{"actions":[],"app":{"id":"a7866ca8-08de-4cde-9a7d-bd5601594f7d","name":"<VALID_APP_ID_WITH_DB_IN_PRO_PLAN>"},"config_vars":["DEADMANSSNITCH_API_KEY"],"created_at":"2018-10-19T10:17:52Z","id":"501a42ac-b435-4a47-a97f-e0a001665a40","name":"deadmanssnitch-lively-37762","addon_service":{"id":"f9a479b6-d984-4158-898c-41e74c8eb007","name":"deadmanssnitch"},"plan":{"id":"724467ad-3cbd-450d-a7fe-ca41a56024c3","name":"deadmanssnitch:the-lone-snitch"},"billing_entity":{"id":"a7866ca8-08de-4cde-9a7d-bd5601594f7d","name":"<VALID_APP_ID_WITH_DB_IN_PRO_PLAN>","type":"app"},"provider_id":"c2f4ae8e-c4a5-43d7-b3b2-f984b3a4f367","state":"provisioned","updated_at":"2019-02-08T08:35:51Z","web_url":"https://addons-sso.heroku.com/apps/a7866ca8-08de-4cde-9a7d-bd5601594f7d/addons/501a42ac-b435-4a47-a97f-e0a001665a40","billed_price":{"cents":0,"contract":false,"unit":"month"}},{"actions":[],"app":{"id":"a7866ca8-08de-4cde-9a7d-bd5601594f7d","name":"<VALID_APP_ID_WITH_DB_IN_PRO_PLAN>"},"config_vars":["NEW_RELIC_LICENSE_KEY","NEW_RELIC_LOG"],"created_at":"2018-06-04T13:35:46Z","id":"c1aec446-6876-41e2-8dd4-41184366076a","name":"newrelic-opaque-25606","addon_service":{"id":"242de9a1-6b5d-4b98-9c13-b03ade5e45af","name":"newrelic"},"plan":{"id":"68d1fd95-a98b-4263-bcdc-87aefb37662c","name":"newrelic:hawke"},"billing_entity":{"id":"a7866ca8-08de-4cde-9a7d-bd5601594f7d","name":"<VALID_APP_ID_WITH_DB_IN_PRO_PLAN>","type":"app"},"provider_id":"1997198","state":"provisioned","updated_at":"2019-04-14T08:17:46Z","web_url":"https://addons-sso.heroku.com/apps/a7866ca8-08de-4cde-9a7d-bd5601594f7d/addons/c1aec446-6876-41e2-8dd4-41184366076a","billed_price":{"cents":4900,"contract":false,"unit":"month"}},{"actions":[{"id":"bbb84dad-c246-4ae9-bbaf-dd8316e55663","label":"All
@@ -59,13 +59,13 @@ http_interactions:
         expensive queries","action":null,"url":"https://data.heroku.com/datastore/:resource_uuid?heroku_action=view_expensive_queries","requires_owner":null},{"id":"cbda8f20-c3e0-46dc-8fbe-df66daf4a28f","label":"Create
         follower","action":null,"url":"https://data.heroku.com/datastore/:resource_uuid?heroku_action=create_follower","requires_owner":true}],"app":{"id":"a7866ca8-08de-4cde-9a7d-bd5601594f7d","name":"<VALID_APP_ID_WITH_DB_IN_PRO_PLAN>"},"config_vars":["DATABASE_URL","HEROKU_POSTGRESQL_NAVY_URL"],"created_at":"2020-02-15T10:40:50Z","id":"<VALID_DATABASE_ID_WITH_PRO_PLAN>","name":"postgresql-defined-53666","addon_service":{"id":"6c67493d-8fc2-4cd4-9161-4f1ec11cbe69","name":"heroku-postgresql"},"plan":{"id":"112f476d-536b-40a9-9d47-ce346920755d","name":"heroku-postgresql:standard-0"},"billing_entity":{"id":"a7866ca8-08de-4cde-9a7d-bd5601594f7d","name":"<VALID_APP_ID_WITH_DB_IN_PRO_PLAN>","type":"app"},"provider_id":"resource39220900@heroku.com","state":"provisioned","updated_at":"2020-10-11T22:34:46Z","web_url":"https://addons-sso.heroku.com/apps/a7866ca8-08de-4cde-9a7d-bd5601594f7d/addons/<VALID_DATABASE_ID_WITH_PRO_PLAN>","billed_price":{"cents":5000,"contract":false,"unit":"month"}},{"actions":[],"app":{"id":"a7866ca8-08de-4cde-9a7d-bd5601594f7d","name":"<VALID_APP_ID_WITH_DB_IN_PRO_PLAN>"},"config_vars":["REDIS_URL"],"created_at":"2020-02-29T09:30:55Z","id":"18c5e294-cfb5-4220-baff-432a0c31e29f","name":"redis-encircled-99600","addon_service":{"id":"5bbf672c-07f6-49c2-9c16-f1dcb96784db","name":"heroku-redis"},"plan":{"id":"f96acc6a-ce2b-41de-b439-42e0b775612b","name":"heroku-redis:premium-3"},"billing_entity":{"id":"a7866ca8-08de-4cde-9a7d-bd5601594f7d","name":"<VALID_APP_ID_WITH_DB_IN_PRO_PLAN>","type":"app"},"provider_id":"resource39603067@heroku.com","state":"provisioned","updated_at":"2020-12-03T17:38:21Z","web_url":"https://addons-sso.heroku.com/apps/a7866ca8-08de-4cde-9a7d-bd5601594f7d/addons/18c5e294-cfb5-4220-baff-432a0c31e29f","billed_price":{"cents":12000,"contract":false,"unit":"month"}},{"actions":[],"app":{"id":"a7866ca8-08de-4cde-9a7d-bd5601594f7d","name":"<VALID_APP_ID_WITH_DB_IN_PRO_PLAN>"},"config_vars":[],"created_at":"2018-10-19T10:09:21Z","id":"04d8cc51-6680-4c89-a798-c7a1ef858fee","name":"scheduler-clear-54288","addon_service":{"id":"3342342e-c3d3-40b9-a839-a751c1dd89bb","name":"scheduler"},"plan":{"id":"86fed9d0-eccc-4007-9459-f807ceadf7a3","name":"scheduler:standard"},"billing_entity":{"id":"a7866ca8-08de-4cde-9a7d-bd5601594f7d","name":"<VALID_APP_ID_WITH_DB_IN_PRO_PLAN>","type":"app"},"provider_id":"624115","state":"provisioned","updated_at":"2019-02-08T08:35:50Z","web_url":"https://addons-sso.heroku.com/apps/a7866ca8-08de-4cde-9a7d-bd5601594f7d/addons/04d8cc51-6680-4c89-a798-c7a1ef858fee","billed_price":{"cents":0,"contract":false,"unit":"month"}}]'
     http_version:
-  recorded_at: Sun, 13 Dec 2020 16:22:41 GMT
+  recorded_at: Sun, 13 Dec 2020 15:17:27 GMT
 - request:
-    method: post
-    uri: https://postgres-api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_PRO_PLAN>/backups
+    method: get
+    uri: https://postgres-api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_PRO_PLAN>
     body:
-      encoding: UTF-8
-      string: "{}"
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -75,17 +75,17 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 201
-      message: Created
+      code: 200
+      message: OK
     headers:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json
+      - application/json;charset=utf-8
       Etag:
-      - W/"c3b52014d60336cce4203e23ef241ecd"
+      - W/"b6fb9f42f32e9b05e428975478c432fc"
       Request-Id:
-      - efea94da-e68a-4f48-a922-205afbff043a
+      - 76448bdc-2598-4c3d-adc1-756cd1db9989
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -95,13 +95,20 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sun, 13 Dec 2020 16:22:42 GMT
+      - Sun, 13 Dec 2020 15:17:28 GMT
       Content-Length:
-      - '1292'
+      - '1203'
     body:
       encoding: ASCII-8BIT
-      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","num":2145,"from_name":"NAVY","from_type":"pg_dump","from_url":"postgres://username:password@database_url:port/schema_name","to_name":"BACKUP","to_type":"gof3r","to_url":"https://bucket_name.s3.amazonaws.com/resource_address","options":{},"source_bytes":null,"processed_bytes":0,"succeeded":null,"warnings":0,"created_at":"2020-12-13
-        16:22:42 +0000","started_at":null,"canceled_at":null,"updated_at":null,"finished_at":null,"deleted_at":null,"purged_at":null,"num_keep":25}'
+      string: '{"following":null,"forked_from":"67bd5e78-287e-41f1-9bbf-6caf9e5b9130","hot_standby?":true,"addon_id":"<VALID_DATABASE_ID_WITH_PRO_PLAN>","name":"postgresql-defined-53666","heroku_resource_id":"resource39220900@heroku.com","formation":{"id":"aa23c355-3147-480e-a04d-f9550884b7dd","primary":"95a50083-d689-4889-a0cc-911e36217da0"},"metaas_source":"dod-postgres://username:password@database_url:port/schema_name","num_connections":12,"num_connections_waiting":0,"num_tables":48,"current_transaction":269601263,"num_bytes":6139601775,"postgres_version":"12.4","plan":{"id":170,"created_at":"2016-04-04T20:54:02.919+00:00","service_slug":"heroku-postgresql","name":"standard-0","tier":"standard","slots":"32.0","instance_type":"t2.medium","virt_type":"hvm","bit_depth":64,"slack_quantity":5,"default_disk_size":68,"default_disk_iops":204,"status":"production","attrs_unparsed":{"work_mem":"32MB","capacity_bytes":"68719476736","hard_connlimit":"200","soft_connlimit":"120","maintenance_work_mem":"128MB"},"default_block_device_mapping":[{"DeviceName":"/dev/sda1","Ebs.VolumeSize":68,"Ebs.VolumeType":"gp2","Ebs.DeleteOnTermination":true},{"DeviceName":"/dev/xvdb","Ebs.Encrypted":true,"Ebs.VolumeSize":68,"Ebs.VolumeType":"gp2","Ebs.DeleteOnTermination":true},{"DeviceName":"/dev/xvdf","Ebs.Encrypted":true,"Ebs.VolumeSize":68,"Ebs.VolumeType":"gp2","Ebs.DeleteOnTermination":true},{"DeviceName":"/dev/xvdg","Ebs.Encrypted":true,"Ebs.VolumeSize":68,"Ebs.VolumeType":"gp2","Ebs.DeleteOnTermination":true}]},"created_at":"2020-10-06T17:21:08.826+00:00","port":5432,"database_name":"schema_name","database_user":"username","database_password":"p09ee5a1175775473252743925ce7be7cc85f8fc31fdde939cbedcc9c82e39cc1","target_transaction":null,"available_for_ingress":true,"resource_url":"postgres://username:password@database_url:port/schema_name","waiting?":false,"credentials":1,"leader":null,"info":[{"name":"Plan","values":["Standard
+        0"]},{"name":"Status","values":["Available"]},{"name":"Data Size","values":["5.72
+        GB"]},{"name":"Tables","values":[48]},{"name":"PG Version","values":["12.4"]},{"name":"Connections","values":["12/120"]},{"name":"Connection
+        Pooling","values":["Available"]},{"name":"Credentials","values":[1]},{"name":"Fork/Follow","values":["Available"]},{"name":"Rollback","values":["earliest
+        from 2020-12-09 15:17 UTC"]},{"name":"Created","values":["2020-10-06 17:21
+        "]},{"name":"Region","values":["eu"]},{"name":"Data Encryption","values":["In
+        Use"]},{"name":"Continuous Protection","values":["On"]},{"name":"Followers","values":[],"resolve_db_name":true},{"name":"Forks","values":[],"resolve_db_name":true},{"name":"Maintenance","values":["not
+        required"]},{"name":"Maintenance window","values":["Sundays 22:30 to Mondays
+        02:30 UTC"]}]}'
     http_version:
-  recorded_at: Sun, 13 Dec 2020 16:22:42 GMT
+  recorded_at: Sun, 13 Dec 2020 15:17:28 GMT
 recorded_with: VCR 4.0.0

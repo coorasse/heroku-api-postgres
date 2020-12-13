@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.heroku.com/apps/<VALID_APP_ID>/addons
+    uri: https://api.heroku.com/apps/<VALID_APP_ID_WITH_DATABASE>/addons
     body:
       encoding: US-ASCII
       string: ''
@@ -27,7 +27,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 13 Dec 2020 16:22:42 GMT
+      - Sun, 13 Dec 2020 15:17:24 GMT
       Etag:
       - '"dd04f2f06b5af5e2ac813a880ffec18d"'
       Last-Modified:
@@ -39,9 +39,9 @@ http_interactions:
       Ratelimit-Multiplier:
       - '1'
       Ratelimit-Remaining:
-      - '4495'
+      - '4498'
       Request-Id:
-      - 9e6eb062-e43d-469b-8687-c8b37deb0c71,6d8909f1-f544-2ab3-60a0-67d723f7cc71,0832b638-3eec-444c-66d4-20f5d1be8c8c
+      - eda8c16f-4891-47c5-9188-72569020ce2d,8980a198-f5f1-e8e8-f15a-af33d39fff54,2e98c060-4c9d-30f0-a7af-c98afa00891e
       Vary:
       - Authorization,Accept-Encoding
       Via:
@@ -49,7 +49,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.052671254'
+      - '0.05517055'
     body:
       encoding: ASCII-8BIT
       string: '[{"actions":[{"id":"f5279071-b2c7-46ef-9ef4-4ea77a5d872a","label":"Create
@@ -57,13 +57,13 @@ http_interactions:
         instructions","action":null,"url":"https://devcenter.heroku.com/articles/upgrading-heroku-postgres-databases","requires_owner":null},{"id":"5ca183f0-198f-4736-a2bc-ea557892fca2","label":"Capture
         backup","action":null,"url":"https://data.heroku.com/datastore/:resource_uuid?heroku_action=capture_backup","requires_owner":null}],"app":{"id":"96619e75-b1db-47e2-ac53-7b6475007224","name":"<VALID_APP_ID_WITH_DATABASE>"},"config_vars":["DATABASE_URL"],"created_at":"2018-01-09T19:16:26Z","id":"<VALID_DATABASE_ID_WITH_SCHEDULES>","name":"postgresql-globular-83867","addon_service":{"id":"6c67493d-8fc2-4cd4-9161-4f1ec11cbe69","name":"heroku-postgresql"},"plan":{"id":"062a1cc7-f79f-404c-9f91-135f70175577","name":"heroku-postgresql:hobby-dev"},"billing_entity":{"id":"96619e75-b1db-47e2-ac53-7b6475007224","name":"<VALID_APP_ID_WITH_DATABASE>","type":"app"},"provider_id":"13277431","state":"provisioned","updated_at":"2019-02-08T03:36:14Z","web_url":"https://addons-sso.heroku.com/apps/96619e75-b1db-47e2-ac53-7b6475007224/addons/<VALID_DATABASE_ID_WITH_SCHEDULES>","billed_price":{"cents":0,"contract":false,"unit":"month"}},{"actions":[],"app":{"id":"96619e75-b1db-47e2-ac53-7b6475007224","name":"<VALID_APP_ID_WITH_DATABASE>"},"config_vars":["REDIS_URL"],"created_at":"2018-01-09T19:16:40Z","id":"a837d753-4da1-41d2-a00c-f3d5cf2ac6da","name":"redis-transparent-58941","addon_service":{"id":"5bbf672c-07f6-49c2-9c16-f1dcb96784db","name":"heroku-redis"},"plan":{"id":"67756275-86b8-4edc-80c5-d543f9df7d44","name":"heroku-redis:hobby-dev"},"billing_entity":{"id":"96619e75-b1db-47e2-ac53-7b6475007224","name":"<VALID_APP_ID_WITH_DATABASE>","type":"app"},"provider_id":"resource21973268@heroku.com","state":"provisioned","updated_at":"2020-11-18T18:13:03Z","web_url":"https://addons-sso.heroku.com/apps/96619e75-b1db-47e2-ac53-7b6475007224/addons/a837d753-4da1-41d2-a00c-f3d5cf2ac6da","billed_price":{"cents":0,"contract":false,"unit":"month"}}]'
     http_version:
-  recorded_at: Sun, 13 Dec 2020 16:22:42 GMT
+  recorded_at: Sun, 13 Dec 2020 15:17:24 GMT
 - request:
-    method: post
-    uri: https://postgres-starter-api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_SCHEDULES>/transfer-schedules
+    method: get
+    uri: https://postgres-starter-api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_SCHEDULES>
     body:
-      encoding: UTF-8
-      string: '{"hour":0,"timezone":"UTC","schedule_name":"DATABASE_URL"}'
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -73,11 +73,11 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 201
-      message: Created
+      code: 200
+      message: OK
     headers:
       Content-Length:
-      - '310'
+      - '1010'
       Content-Type:
       - application/json
       Strict-Transport-Security:
@@ -87,11 +87,14 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sun, 13 Dec 2020 16:22:43 GMT
+      - Sun, 13 Dec 2020 15:17:27 GMT
     body:
       encoding: UTF-8
-      string: '{"uuid":"82ead067-7608-f587-cf6f-d351ba6b684c","name":"DATABASE_URL","hour":0,"days":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"timezone":"UTC","created_at":"2018-03-04
-        18:25:39 +0000","updated_at":"2020-12-13 00:00:22 +0000","deleted_at":null,"retain_weeks":1,"retain_months":0}'
+      string: '{"addon_id":"<VALID_DATABASE_ID_WITH_SCHEDULES>","name":"postgresql-globular-83867","info":[{"name":"Plan","values":["Hobby-dev"]},{"name":"Status","values":["Available"]},{"name":"Connections","values":["0/20"]},{"name":"PG
+        Version","values":["10.15"]},{"name":"Created","values":["2018-01-09 19:16
+        UTC"]},{"name":"Data Size","values":["7.6 MB"]},{"name":"Tables","values":[2]},{"name":"Rows","values":["0/10000
+        (In compliance)"]},{"name":"Fork/Follow","values":["Unsupported"]},{"name":"Rollback","values":["Unsupported"]},{"name":"Continuous
+        Protection","values":["Off"]},{"name":"Region","values":["Europe"]}],"plan":"Hobby-dev","created_at":"2018-01-09T19:16:27.086+00:00","database_user":"username","database_name":"schema_name","available_for_ingress":true,"standalone?":false,"resource_url":"postgres://username:password@database_url:port/schema_name","waiting?":false,"num_bytes":8004099}'
     http_version:
-  recorded_at: Sun, 13 Dec 2020 16:22:43 GMT
+  recorded_at: Sun, 13 Dec 2020 15:17:27 GMT
 recorded_with: VCR 4.0.0

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   let(:oauth_token) { ENV['HEROKU_OAUTH_TOKEN'] }
   let(:client) { Heroku::Api::Postgres.connect_oauth(oauth_token) }
@@ -12,8 +14,8 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
         copies = json_response.select { |backup| backup[:from_type] == 'pg_dump' && backup[:to_type] == 'pg_restore' }
         expect(json_response.length).to be > 0
         expect(backups.length).to be > 0
-        expect(restores.length).to eq 0
-        expect(copies.length).to be > 0
+        expect(restores.length).to be > 0
+        expect(copies.length).to be 0
       end
     end
   end
@@ -22,8 +24,9 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
     let(:app_id) { ENV['VALID_APP_ID'] }
     let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
     subject(:json_response) { client.backups.schedules(app_id, database_id) }
+
     context 'server returns 404' do
-      let(:oauth_token) { 'invalid_key' }
+      let(:database_id) { 'whaaaat' }
       it 'returns an error in json format' do
         expect(json_response[:error][:status]).to eq 404
       end
@@ -60,6 +63,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
       end
 
       context 'when server has a pro plan' do
+        let(:app_id) { ENV['VALID_APP_ID_WITH_DB_IN_PRO_PLAN'] }
         let(:database_id) { ENV['VALID_DATABASE_ID_WITH_PRO_PLAN'] }
         it 'calls the correct API host and captures a backup of the database' do
           expect(json_response[:uuid]).not_to be_nil
@@ -93,6 +97,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
       end.first[:num]
     end
     subject(:json_response) { client.backups.url(app_id, backup_num) }
+
     context 'server returns 200' do
       it 'returns the public url of a database' do
         expect(json_response[:expires_at]).not_to be_nil
