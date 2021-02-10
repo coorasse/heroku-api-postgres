@@ -27,6 +27,10 @@ module Heroku
           @databases ||= Databases.new(self)
         end
 
+        def credentials
+          @credentials ||= Credentials.new(self)
+        end
+
         # the database id matches the field `id` in pro plans and the field addon_service.id in free plans
         def db_host(app_id, database_id)
           all_addons = heroku_client.addon.list_by_app(app_id)
