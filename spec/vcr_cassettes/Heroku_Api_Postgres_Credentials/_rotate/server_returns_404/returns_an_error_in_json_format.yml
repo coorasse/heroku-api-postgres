@@ -1,0 +1,104 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.heroku.com/apps/<VALID_APP_ID_WITH_DATABASE>/addons
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - platform-api/2.2.0
+      Accept:
+      - application/vnd.heroku+json; version=3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - id, name
+      Cache-Control:
+      - private, no-cache
+      Content-Expansion:
+      - addon_service, plan
+      Content-Length:
+      - '1397'
+      Content-Range:
+      - name postgresql-corrugated-51220..postgresql-corrugated-51220
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Feb 2021 18:32:14 GMT
+      Etag:
+      - '"146046762b099a1ee2cb4c9215bca6ef"'
+      Last-Modified:
+      - Wed, 10 Feb 2021 18:31:39 GMT
+      Oauth-Scope:
+      - global
+      Oauth-Scope-Accepted:
+      - global read read-protected write write-protected
+      Ratelimit-Multiplier:
+      - '1'
+      Ratelimit-Remaining:
+      - '4462'
+      Request-Id:
+      - edd6ed46-a38c-4d93-98e0-905ee2000cea,e5cf5af8-f06b-1be8-9460-ddd9b2825e52,28bb689d-173d-840c-b8a7-5e33904b7e0a
+      Traceparent:
+      - 00-65a42052af93b0801cc6392f214ccf63-c52bdbfeb61a97f1-01
+      Tracestate:
+      - ''
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 spaces-router (b8c6a3b738c9), 1.1 spaces-router (b8c6a3b738c9)
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.060642806'
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"actions":[{"id":"489f522d-73c6-4da3-b9fe-239fe57aa509","label":"Create
+        Dataclip","action":null,"url":"http://dataclips.heroku.com/clips/new?heroku_resource_id=:resource_id&heroku_id=:resource_uuid","requires_owner":null},{"id":"2e5c2d92-eb01-4add-8005-32a938ae2984","label":"Upgrade
+        instructions","action":null,"url":"https://devcenter.heroku.com/articles/upgrading-heroku-postgres-databases","requires_owner":null},{"id":"477a9556-0ba4-4db7-82cf-87d31eaa6dd1","label":"Capture
+        backup","action":null,"url":"https://data.heroku.com/datastore/:resource_uuid?heroku_action=capture_backup","requires_owner":null}],"app":{"id":"09210f42-08d8-4f36-b870-7918e59da22c","name":"<VALID_APP_ID_WITH_DATABASE>"},"config_vars":["DATABASE_URL"],"created_at":"2021-02-10T18:31:39Z","id":"<VALID_DATABASE_ID_WITH_SCHEDULES>","name":"postgresql-corrugated-51220","addon_service":{"id":"6c67493d-8fc2-4cd4-9161-4f1ec11cbe69","name":"heroku-postgresql"},"plan":{"id":"062a1cc7-f79f-404c-9f91-135f70175577","name":"heroku-postgresql:hobby-dev"},"billing_entity":{"id":"09210f42-08d8-4f36-b870-7918e59da22c","name":"<VALID_APP_ID_WITH_DATABASE>","type":"app"},"provider_id":"22268297","state":"provisioned","updated_at":"2021-02-10T18:31:39Z","web_url":"https://addons-sso.heroku.com/apps/09210f42-08d8-4f36-b870-7918e59da22c/addons/<VALID_DATABASE_ID_WITH_SCHEDULES>","billed_price":{"cents":0,"contract":false,"unit":"month"}}]'
+    http_version: 
+  recorded_at: Wed, 10 Feb 2021 18:32:14 GMT
+- request:
+    method: post
+    uri: https://postgres-starter-api.heroku.com/postgres/v0/databases/whaaaat/credentials/default/credentials_rotation
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Length:
+      - '18'
+      Content-Type:
+      - application/json
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 spaces-router (b8c6a3b738c9)
+      X-Cascade:
+      - pass
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Wed, 10 Feb 2021 18:32:15 GMT
+    body:
+      encoding: UTF-8
+      string: "<h1>Not Found</h1>"
+    http_version: 
+  recorded_at: Wed, 10 Feb 2021 18:32:15 GMT
+recorded_with: VCR 4.0.0
