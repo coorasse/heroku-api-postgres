@@ -39,7 +39,7 @@ module Heroku
         end
 
         def perform_get_request(path, options = {})
-          url = build_uri(path, options)
+          url = build_uri(path, **options)
           req = Net::HTTP::Get.new(url)
           add_auth_headers(req)
           response = start_request(req, url)
@@ -47,7 +47,7 @@ module Heroku
         end
 
         def perform_post_request(path, params = {}, options = {})
-          url = build_uri(path, options)
+          url = build_uri(path, **options)
           req = Net::HTTP::Post.new(url)
           add_auth_headers(req)
           req.body = params.to_json
