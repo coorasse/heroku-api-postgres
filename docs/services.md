@@ -46,7 +46,7 @@ You can use the command `client.backups.wait(app_id, restore[:num])` to wait for
 
 - [ ] pg:credentials:repair-default
 
-- [ ] pg:credentials:rotate
+- [x] pg:credentials:rotate --> `client.credentials.rotate(app_id, database_id)`
 
 - [ ] pg:credentials:url
 

@@ -73,6 +73,20 @@ Waits for the given database to be ready.
 
 Polls every `wait_interval` seconds (default 3).
 
+### Credentials
+
+```ruby
+credentials_client = postgres_api_client.credentials
+```
+
+---
+
+```ruby
+credentials_client.rotate(app_id, database_id)
+```
+
+Rotate the database credentials.
+
 ### Backups
 
 ```ruby
@@ -180,7 +194,7 @@ Check also the [Official API](https://devcenter.heroku.com/articles/platform-api
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies.
-Then, run `rake spec` to run the tests. 
+Then, run `rake spec` to run the tests.
 You can run `bin/check` to run linter and the tests together.
 You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
