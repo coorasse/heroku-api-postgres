@@ -35,9 +35,9 @@ module Heroku
                                          schedule_name: 'DATABASE_URL' }, host: db_host(app_id, database_id))
         end
 
-        def capture(app_id, database_id)
+        def capture(app_id, database_id, options = {})
           @client.perform_post_request("/client/v11/databases/#{database_id}/backups",
-                                       {},
+                                       options,
                                        host: db_host(app_id, database_id))
         end
 
