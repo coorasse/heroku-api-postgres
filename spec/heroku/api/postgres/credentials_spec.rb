@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 RSpec.describe Heroku::Api::Postgres::Credentials, :vcr do
-  let(:oauth_token) { ENV['HEROKU_OAUTH_TOKEN'] }
+  let(:oauth_token) { ENV.fetch('HEROKU_OAUTH_TOKEN', nil) }
   let(:client) { Heroku::Api::Postgres.connect_oauth(oauth_token) }
 
   describe '#rotate' do
-    let(:app_id) { ENV['VALID_APP_ID_WITH_DATABASE'] }
-    let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
+    let(:app_id) { ENV.fetch('VALID_APP_ID_WITH_DATABASE', nil) }
+    let(:database_id) { ENV.fetch('VALID_DATABASE_ID_WITH_SCHEDULES', nil) }
     subject(:json_response) { client.credentials.rotate(app_id, database_id) }
 
     context 'server returns 404' do

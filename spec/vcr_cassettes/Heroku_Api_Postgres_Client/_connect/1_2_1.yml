@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.heroku.com/apps/<VALID_APP_ID_WITH_DATABASE>/addons
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - platform-api/3.8.0
+      Accept:
+      - application/vnd.heroku+json; version=3
+      Accept-Encoding:
+      - deflate, gzip
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - id, name
+      Cache-Control:
+      - private, no-cache
+      Content-Encoding:
+      - ''
+      Content-Expansion:
+      - addon_service, plan
+      Content-Length:
+      - '836'
+      Content-Range:
+      - name postgresql-regular-65240..redis-concave-56624
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 13 Mar 2025 08:48:45 GMT
+      Etag:
+      - '"cd3edf80873de388bbab22c06621432e"'
+      Last-Modified:
+      - Fri, 07 Feb 2025 07:31:47 GMT
+      Oauth-Scope:
+      - global
+      Oauth-Scope-Accepted:
+      - global read read-protected write write-protected
+      Ratelimit-Multiplier:
+      - '1'
+      Ratelimit-Remaining:
+      - '4499'
+      Request-Id:
+      - 921ba0f2-aa9e-4d83-a5c0-29a9a7ef4da6,7478f493-e0db-0761-ff00-f65e4b4cf7ec,f623949e-1c34-66c8-1b34-3609f020ef7c
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains, max-age=31536000; includeSubDomains
+      Vary:
+      - Authorization,Accept-Encoding
+      Via:
+      - 1.1 spaces-router (bc46c658aac4), 1.1 spaces-router (bc46c658aac4)
+      X-Content-Type-Options:
+      - nosniff
+      X-Runtime:
+      - '0.062460597'
+    body:
+      encoding: UTF-8
+      string: '[{"actions":[{"id":"692d9fd1-3e58-4534-964a-3f0e6e1f8295","label":"Create
+        Dataclip","action":null,"url":"http://dataclips.heroku.com/clips/new?heroku_resource_id=:resource_id&heroku_id=:resource_uuid","requires_owner":null},{"id":"df30c97b-64d3-4508-8f0b-338afe9e68c4","label":"Upgrade
+        instructions","action":null,"url":"https://devcenter.heroku.com/articles/upgrading-heroku-postgres-databases","requires_owner":null}],"app":{"id":"f265ae59-4360-4bb7-a560-106a903a3c23","name":"<VALID_APP_ID_WITH_DATABASE>"},"config_vars":["DATABASE_URL","HEROKU_POSTGRESQL_BROWN_URL"],"created_at":"2021-09-23T09:22:30Z","id":"<VALID_DATABASE_ID_WITH_SCHEDULES>","name":"postgresql-regular-65240","addon_service":{"id":"6c67493d-8fc2-4cd4-9161-4f1ec11cbe69","name":"heroku-postgresql"},"plan":{"id":"c5b5a2f8-921e-494f-8dd7-d555a75ae8e5","name":"heroku-postgresql:essential-1"},"billing_entity":{"id":"f265ae59-4360-4bb7-a560-106a903a3c23","name":"<VALID_APP_ID_WITH_DATABASE>","type":"app"},"provider_id":"24643027","state":"provisioned","updated_at":"2024-12-06T20:07:36Z","web_url":"https://addons-sso.heroku.com/apps/f265ae59-4360-4bb7-a560-106a903a3c23/addons/<VALID_DATABASE_ID_WITH_SCHEDULES>","billed_price":{"cents":900,"contract":false,"unit":"month"}},{"actions":[],"app":{"id":"f265ae59-4360-4bb7-a560-106a903a3c23","name":"<VALID_APP_ID_WITH_DATABASE>"},"config_vars":["REDIS_URL"],"created_at":"2021-09-09T09:19:40Z","id":"7914a858-b8ac-428f-98e7-91e79ec5a9b0","name":"redis-concave-56624","addon_service":{"id":"5bbf672c-07f6-49c2-9c16-f1dcb96784db","name":"heroku-redis"},"plan":{"id":"f60e8b81-7f61-426c-afbc-b2cab4b8f271","name":"heroku-redis:premium-0"},"billing_entity":{"id":"f265ae59-4360-4bb7-a560-106a903a3c23","name":"<VALID_APP_ID_WITH_DATABASE>","type":"app"},"provider_id":"resource54842719@heroku.com","state":"provisioned","updated_at":"2025-02-07T07:31:47Z","web_url":"https://addons-sso.heroku.com/apps/f265ae59-4360-4bb7-a560-106a903a3c23/addons/7914a858-b8ac-428f-98e7-91e79ec5a9b0","billed_price":{"cents":1500,"contract":false,"unit":"month"}}]'
+  recorded_at: Thu, 13 Mar 2025 08:48:45 GMT
+- request:
+    method: get
+    uri: https://postgres-api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_SCHEDULES>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.heroku+json; version=3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Length:
+      - '63'
+      Content-Type:
+      - application/json; charset=utf-8
+      Request-Id:
+      - fc995bc5-7060-4c2e-8f61-74c6e5cf432f
+      Vary:
+      - Origin
+      Via:
+      - 1.1 spaces-router (bc46c658aac4)
+      Date:
+      - Thu, 13 Mar 2025 08:48:45 GMT
+    body:
+      encoding: UTF-8
+      string: '{"id":"unauthorized","message":"Invalid credentials provided."}'
+  recorded_at: Thu, 13 Mar 2025 08:48:45 GMT
+recorded_with: VCR 6.3.1

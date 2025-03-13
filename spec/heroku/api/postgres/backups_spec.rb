@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
-  let(:oauth_token) { ENV['HEROKU_OAUTH_TOKEN'] }
+  let(:oauth_token) { ENV.fetch('HEROKU_OAUTH_TOKEN', nil) }
   let(:client) { Heroku::Api::Postgres.connect_oauth(oauth_token) }
 
   describe '#list' do
-    let(:app_id) { ENV['VALID_APP_ID'] }
+    let(:app_id) { ENV.fetch('VALID_APP_ID', nil) }
     subject(:json_response) { client.backups.list(app_id) }
     context 'server returns 200' do
       it 'returns the backups available for the app' do
@@ -21,8 +21,8 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   end
 
   describe '#schedules' do
-    let(:app_id) { ENV['VALID_APP_ID'] }
-    let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
+    let(:app_id) { ENV.fetch('VALID_APP_ID', nil) }
+    let(:database_id) { ENV.fetch('VALID_DATABASE_ID_WITH_SCHEDULES', nil) }
     subject(:json_response) { client.backups.schedules(app_id, database_id) }
 
     context 'server returns 404' do
@@ -51,8 +51,8 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   end
 
   describe '#capture' do
-    let(:app_id) { ENV['VALID_APP_ID'] }
-    let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
+    let(:app_id) { ENV.fetch('VALID_APP_ID', nil) }
+    let(:database_id) { ENV.fetch('VALID_DATABASE_ID_WITH_SCHEDULES', nil) }
     subject(:json_response) { client.backups.capture(app_id, database_id) }
     context 'server returns 200' do
       it 'captures a backup of the database' do
@@ -63,8 +63,8 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
       end
 
       context 'when server has a pro plan' do
-        let(:app_id) { ENV['VALID_APP_ID_WITH_DB_IN_PRO_PLAN'] }
-        let(:database_id) { ENV['VALID_DATABASE_ID_WITH_PRO_PLAN'] }
+        let(:app_id) { ENV.fetch('VALID_APP_ID_WITH_DB_IN_PRO_PLAN', nil) }
+        let(:database_id) { ENV.fetch('VALID_DATABASE_ID_WITH_PRO_PLAN', nil) }
         it 'calls the correct API host and captures a backup of the database' do
           expect(json_response[:uuid]).not_to be_nil
           expect(json_response[:from_type]).to eq 'pg_dump'
@@ -76,8 +76,8 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   end
 
   describe '#schedule' do
-    let(:app_id) { ENV['VALID_APP_ID'] }
-    let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
+    let(:app_id) { ENV.fetch('VALID_APP_ID', nil) }
+    let(:database_id) { ENV.fetch('VALID_DATABASE_ID_WITH_SCHEDULES', nil) }
     subject(:json_response) { client.backups.schedule(app_id, database_id) }
 
     context 'server returns 200' do
@@ -102,7 +102,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   end
 
   describe '#url' do
-    let(:app_id) { ENV['VALID_APP_ID'] }
+    let(:app_id) { ENV.fetch('VALID_APP_ID', nil) }
     let(:backup_num) do
       client.backups.list(app_id).select do |backup|
         backup[:from_type] == 'pg_dump' && backup[:to_type] == 'gof3r'
@@ -119,7 +119,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   end
 
   describe '#info' do
-    let(:app_id) { ENV['VALID_APP_ID'] }
+    let(:app_id) { ENV.fetch('VALID_APP_ID', nil) }
     let(:backup) do
       client.backups.list(app_id).select do |backup|
         backup[:from_type] == 'pg_dump' && backup[:to_type] == 'gof3r'
@@ -139,8 +139,8 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   end
 
   describe '#wait' do
-    let(:app_id) { ENV['VALID_APP_ID_WITH_DATABASE'] }
-    let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
+    let(:app_id) { ENV.fetch('VALID_APP_ID_WITH_DATABASE', nil) }
+    let(:database_id) { ENV.fetch('VALID_DATABASE_ID_WITH_SCHEDULES', nil) }
 
     context 'server returns 200' do
       it 'waits for the given backup to be available and returns the backup' do
@@ -155,9 +155,9 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   end
 
   describe '#restore' do
-    let(:app_id) { ENV['VALID_APP_ID_WITH_DATABASE'] }
-    let(:database_id) { ENV['VALID_DATABASE_ID_WITH_SCHEDULES'] }
-    let(:dump_url) { ENV['VALID_DUMP_URL'] }
+    let(:app_id) { ENV.fetch('VALID_APP_ID_WITH_DATABASE', nil) }
+    let(:database_id) { ENV.fetch('VALID_DATABASE_ID_WITH_SCHEDULES', nil) }
+    let(:dump_url) { ENV.fetch('VALID_DUMP_URL', nil) }
 
     context 'server returns 200' do
       it 'restores a backup from a public url' do

@@ -1,3 +1,8 @@
+## 0.13.0
+
+* Update of dependencies and minimum ruby version set to 3.2.7. ([@coorasse][])
+* Allow to connect using an API Key. ([@coorasse][])
+
 ## 0.12.0
 
 * [#18](https://github.com/coorasse/heroku-api-postgres/pull/18): Support ruby 3.0. ([@louism517][])
@@ -8,3 +13,4 @@
 [@avokhmin]: https://github.com/avokhmin
 [@deepakmahakale]: https://github.com/deepakmahakale
 [@louism517]: https://github.com/louism517
+[@coorasse]: https://github.com/coorasse

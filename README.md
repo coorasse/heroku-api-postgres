@@ -37,7 +37,12 @@ Or install it yourself as:
 ## Usage
 
 This gem client needs to be instantiated in a similar way to the [PlatformAPI](https://github.com/heroku/platform-api).
-You can use the same oauth key that you use for the PlatformAPI.
+You can use the same oauth key or API key that you use for the PlatformAPI.
+
+```ruby
+postgres_api_client = Heroku::Api::Postgres.connect(ENV['HEROKU_API_KEY'])
+```
+
 
 ```ruby
 postgres_api_client = Heroku::Api::Postgres.connect_oauth(ENV['HEROKU_OAUTH_TOKEN'])
@@ -109,6 +114,9 @@ returns an array of [Backup](docs/models.md#backup).
 The app_id can be either the name of your heroku app or the id.
 
 [Check official API](https://devcenter.heroku.com/articles/platform-api-reference#app)
+
+To retrieve the APP_ID and DATABASE_ID needed to run the tests you can use the name of the app as APP_ID and execute:
+`heroku addons --json --app YOUR_APP` to retrieve the DATABASE_ID.
 
 ---
 

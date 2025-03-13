@@ -3,20 +3,28 @@
 module Heroku
   module Api
     module Postgres
-      def self.connect_oauth(oauth_client_key = ENV['HEROKU_OAUTH_TOKEN'])
-        Client.new(oauth_client_key)
+      def self.connect(api_key = ENV.fetch('HEROKU_API_KEY', nil))
+        Client.new.tap do |c|
+          c.api_key = api_key
+          c.heroku_client = PlatformAPI.connect(api_key)
+        end
+      end
+
+      def self.connect_oauth(oauth_client_key = ENV.fetch('HEROKU_OAUTH_TOKEN', nil))
+        Client.new.tap do |c|
+          c.oauth_client_key = oauth_client_key
+          c.heroku_client = PlatformAPI.connect_oauth(oauth_client_key)
+        end
       end
 
       class Client
         STARTER_HOST = 'https://postgres-starter-api.heroku.com'
         PRO_HOST = 'https://postgres-api.heroku.com'
 
-        attr_reader :oauth_client_key, :heroku_client
+        attr_accessor :api_key, :oauth_client_key, :heroku_client
 
-        def initialize(oauth_client_key)
-          @oauth_client_key = oauth_client_key
+        def initialize
           @basic_url = STARTER_HOST
-          @heroku_client = PlatformAPI.connect_oauth(oauth_client_key)
         end
 
         def backups
