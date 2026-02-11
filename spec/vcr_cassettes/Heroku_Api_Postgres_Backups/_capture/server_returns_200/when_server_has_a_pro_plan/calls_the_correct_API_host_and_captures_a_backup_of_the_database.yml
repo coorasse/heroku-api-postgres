@@ -62,7 +62,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 16:22:41 GMT
 - request:
     method: post
-    uri: https://postgres-api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_PRO_PLAN>/backups
+    uri: https://api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_PRO_PLAN>/backups
     body:
       encoding: UTF-8
       string: "{}"

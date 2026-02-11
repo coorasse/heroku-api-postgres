@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID>/transfers
+    uri: https://api.heroku.com/client/v11/apps/<VALID_APP_ID>/transfers
     body:
       encoding: US-ASCII
       string: ''
@@ -75,7 +75,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 16:22:45 GMT
 - request:
     method: get
-    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID>/transfers/1721
+    uri: https://api.heroku.com/client/v11/apps/<VALID_APP_ID>/transfers/1721
     body:
       encoding: US-ASCII
       string: ''

@@ -60,7 +60,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 16:22:39 GMT
 - request:
     method: post
-    uri: https://postgres-starter-api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_SCHEDULES>/backups
+    uri: https://api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_SCHEDULES>/backups
     body:
       encoding: UTF-8
       string: "{}"

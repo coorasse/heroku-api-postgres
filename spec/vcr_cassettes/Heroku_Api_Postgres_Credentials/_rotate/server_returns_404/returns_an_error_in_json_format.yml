@@ -66,7 +66,7 @@ http_interactions:
   recorded_at: Wed, 10 Feb 2021 18:32:14 GMT
 - request:
     method: post
-    uri: https://postgres-starter-api.heroku.com/postgres/v0/databases/whaaaat/credentials/default/credentials_rotation
+    uri: https://api.heroku.com/postgres/v0/databases/whaaaat/credentials/default/credentials_rotation
     body:
       encoding: UTF-8
       string: "{}"
