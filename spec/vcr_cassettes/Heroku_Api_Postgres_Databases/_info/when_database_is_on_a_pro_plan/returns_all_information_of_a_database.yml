@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.heroku.com/apps/<VALID_APP_ID_WITH_DB_IN_PRO_PLAN>/addons
+    uri: https://postgres-api.heroku.com/apps/<VALID_APP_ID_WITH_DB_IN_PRO_PLAN>/addons
     body:
       encoding: US-ASCII
       string: ''
@@ -62,7 +62,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 15:17:27 GMT
 - request:
     method: get
-    uri: https://api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_PRO_PLAN>
+    uri: https://postgres-api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_PRO_PLAN>
     body:
       encoding: US-ASCII
       string: ''

@@ -21,7 +21,7 @@ module Heroku
         attr_accessor :api_key, :api_host, :oauth_client_key, :heroku_client
 
         def initialize
-          @api_host = 'https://api.heroku.com'
+          @api_host = 'https://postgres-api.heroku.com'
         end
 
         def backups

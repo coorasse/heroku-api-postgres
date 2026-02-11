@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.heroku.com/apps/<VALID_APP_ID>/addons
+    uri: https://postgres-api.heroku.com/apps/<VALID_APP_ID>/addons
     body:
       encoding: US-ASCII
       string: ''
@@ -60,7 +60,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 16:26:53 GMT
 - request:
     method: get
-    uri: https://api.heroku.com/client/v11/databases/whaaaat/transfer-schedules
+    uri: https://postgres-api.heroku.com/client/v11/databases/whaaaat/transfer-schedules
     body:
       encoding: US-ASCII
       string: ''
