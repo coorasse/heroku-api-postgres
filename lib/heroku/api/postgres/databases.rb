@@ -25,13 +25,7 @@ module Heroku
         end
 
         def info(app_id, database_id)
-          @client.perform_get_request("/client/v11/databases/#{database_id}", host: db_host(app_id, database_id))
-        end
-
-        private
-
-        def db_host(app_id, database_id)
-          @client.db_host(app_id, database_id)
+          @client.perform_get_request("/client/v11/databases/#{database_id}", host: @client::API_HOST)
         end
       end
     end

@@ -18,14 +18,9 @@ module Heroku
       end
 
       class Client
-        STARTER_HOST = 'https://postgres-starter-api.heroku.com'
-        PRO_HOST = 'https://postgres-api.heroku.com'
+        API_HOST = 'https://api.heroku.com'
 
         attr_accessor :api_key, :oauth_client_key, :heroku_client
-
-        def initialize
-          @basic_url = STARTER_HOST
-        end
 
         def backups
           @backups ||= Backups.new(self)
@@ -37,17 +32,6 @@ module Heroku
 
         def credentials
           @credentials ||= Credentials.new(self)
-        end
-
-        # the database id matches the field `id` in pro plans and the field addon_service.id in free plans
-        def db_host(app_id, database_id)
-          all_addons = heroku_client.addon.list_by_app(app_id)
-          database_json = all_addons.find do |addon|
-            [addon['id'], addon['addon_service']['id']].include?(database_id)
-          end
-          return STARTER_HOST if database_json.nil?
-
-          host_for(database_json)
         end
 
         def perform_get_request(path, options = {})
@@ -69,15 +53,7 @@ module Heroku
 
         private
 
-        def host_for(database_json)
-          starter_plan?(database_json) ? STARTER_HOST : PRO_HOST
-        end
-
-        def starter_plan?(database)
-          database['plan']['name'].match(/(dev|basic)$/)
-        end
-
-        def build_uri(path, host: @basic_url)
+        def build_uri(path, host: API_HOST)
           URI.join(host, path)
         end
 
