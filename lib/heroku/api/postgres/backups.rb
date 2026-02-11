@@ -27,7 +27,7 @@ module Heroku
           @client.perform_get_request("/client/v11/databases/#{database_id}/transfer-schedules")
         end
 
-        def schedule(database_id, hour: 0o0, timezone: 'UTC')
+        def schedule(database_id, hour: 0, timezone: 'UTC')
           @client.perform_post_request("/client/v11/databases/#{database_id}/transfer-schedules",
                                        { hour: hour,
                                          timezone: timezone,
