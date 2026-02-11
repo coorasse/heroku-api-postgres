@@ -21,7 +21,7 @@ module Heroku
           path = "/postgres/v0/databases/#{database_id}/credentials" \
                  "/#{URI.encode_www_form_component(name)}/credentials_rotation"
 
-          @client.perform_post_request(path, {}, host: @client.api_host)
+          @client.perform_post_request(path, {})
         end
       end
     end
