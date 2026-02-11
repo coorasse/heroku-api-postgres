@@ -23,7 +23,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   describe '#schedules' do
     let(:app_id) { ENV.fetch('VALID_APP_ID', nil) }
     let(:database_id) { ENV.fetch('VALID_DATABASE_ID_WITH_SCHEDULES', nil) }
-    subject(:json_response) { client.backups.schedules(app_id, database_id) }
+    subject(:json_response) { client.backups.schedules(database_id) }
 
     context 'server returns 404' do
       let(:database_id) { 'whaaaat' }
@@ -53,7 +53,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   describe '#capture' do
     let(:app_id) { ENV.fetch('VALID_APP_ID', nil) }
     let(:database_id) { ENV.fetch('VALID_DATABASE_ID_WITH_SCHEDULES', nil) }
-    subject(:json_response) { client.backups.capture(app_id, database_id) }
+    subject(:json_response) { client.backups.capture(database_id) }
     context 'server returns 200' do
       it 'captures a backup of the database' do
         expect(json_response[:uuid]).not_to be_nil
@@ -78,7 +78,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
   describe '#schedule' do
     let(:app_id) { ENV.fetch('VALID_APP_ID', nil) }
     let(:database_id) { ENV.fetch('VALID_DATABASE_ID_WITH_SCHEDULES', nil) }
-    subject(:json_response) { client.backups.schedule(app_id, database_id) }
+    subject(:json_response) { client.backups.schedule(database_id) }
 
     context 'server returns 200' do
       it 'creates a schedule for the given database' do
@@ -89,7 +89,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
       end
 
       context 'when set hour and timezone' do
-        subject(:json_response) { client.backups.schedule(app_id, database_id, hour: 1, timezone: 'Asia/Tokyo') }
+        subject(:json_response) { client.backups.schedule(database_id, hour: 1, timezone: 'Asia/Tokyo') }
 
         it 'creates a schedule for the given database' do
           expect(json_response[:uuid]).not_to be_nil
@@ -144,7 +144,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
 
     context 'server returns 200' do
       it 'waits for the given backup to be available and returns the backup' do
-        backup = client.backups.capture(app_id, database_id)
+        backup = client.backups.capture(database_id)
         backup = client.backups.wait(app_id, backup[:num], wait_interval: 0.01)
 
         expect(backup[:uuid]).not_to be_nil
@@ -161,7 +161,7 @@ RSpec.describe Heroku::Api::Postgres::Backups, :vcr do
 
     context 'server returns 200' do
       it 'restores a backup from a public url' do
-        restore = client.backups.restore(app_id, database_id, dump_url)
+        restore = client.backups.restore(database_id, dump_url)
 
         expect(restore[:uuid]).not_to be_nil
         expect(restore[:from_name]).to eq 'BACKUP'

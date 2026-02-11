@@ -60,7 +60,7 @@ databases_client = postgres_api_client.databases
 ---
 
 ```ruby
-database_info = databases_client.info(app_id, database_id)
+database_info = databases_client.info(database_id)
 ```
 
 returns a [Database](docs/models.md#database).
@@ -68,7 +68,7 @@ returns a [Database](docs/models.md#database).
 ---
 
 ```ruby
-database = postgres_api_client.databases.wait(app_id, database_id, wait_interval: 5)
+database = postgres_api_client.databases.wait(database_id, wait_interval: 5)
 ```
 
 Waits for the given database to be ready.
@@ -84,7 +84,7 @@ credentials_client = postgres_api_client.credentials
 ---
 
 ```ruby
-credentials_client.rotate(app_id, database_id)
+credentials_client.rotate(database_id)
 ```
 
 Rotate the database credentials.
@@ -121,7 +121,7 @@ To retrieve the APP_ID and DATABASE_ID needed to run the tests you can use the n
 ---
 
 ```ruby
-schedules = backups_client.schedules(app_id, database_id)
+schedules = backups_client.schedules(database_id)
 ```
 
 Returns all the backup schedules associated with the database.
@@ -131,7 +131,7 @@ Returns an array of [Schedule](docs/models.md#schedule)
 ---
 
 ```ruby
-schedule = backups_client.schedule(app_id, database_id)
+schedule = backups_client.schedule(database_id)
 ```
 
 Schedules the backups at 00:00 UTC.
@@ -142,7 +142,7 @@ Returns a [Schedule](docs/models.md#schedule)
 
 
 ```ruby
-backup = backups_client.capture(app_id, database_id)
+backup = backups_client.capture(database_id)
 ```
 Captures a new backup for the given database
 
@@ -160,7 +160,7 @@ Returns a [BackupUrl](docs/models.md#backup_url)
 ---
 
 ```ruby
-backup = backups_client.restore(app_id, database_id, dump_url)
+backup = backups_client.restore(database_id, dump_url)
 ```
 Restores a dump from a public URL.
 

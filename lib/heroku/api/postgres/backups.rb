@@ -23,19 +23,19 @@ module Heroku
           @client.perform_get_request("/client/v11/apps/#{app_id}/transfers/#{backup_id}")
         end
 
-        def schedules(app_id, database_id)
+        def schedules(database_id)
           @client.perform_get_request("/client/v11/databases/#{database_id}/transfer-schedules",
                                       host: @client::API_HOST)
         end
 
-        def schedule(app_id, database_id, hour: 0o0, timezone: 'UTC')
+        def schedule(database_id, hour: 0o0, timezone: 'UTC')
           @client.perform_post_request("/client/v11/databases/#{database_id}/transfer-schedules",
                                        { hour: hour,
                                          timezone: timezone,
                                          schedule_name: 'DATABASE_URL' }, host: @client::API_HOST)
         end
 
-        def capture(app_id, database_id, options = {})
+        def capture(database_id, options = {})
           @client.perform_post_request("/client/v11/databases/#{database_id}/backups",
                                        options,
                                        host: @client::API_HOST)
@@ -64,7 +64,7 @@ module Heroku
           backup
         end
 
-        def restore(app_id, database_id, backup_url)
+        def restore(database_id, backup_url)
           @client.perform_post_request("/client/v11/databases/#{database_id}/restores",
                                        { backup_url: backup_url }, host: @client::API_HOST)
         end
