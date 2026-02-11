@@ -25,7 +25,7 @@ module Heroku
         end
 
         def info(database_id)
-          @client.perform_get_request("/client/v11/databases/#{database_id}", host: @client::API_HOST)
+          @client.perform_get_request("/client/v11/databases/#{database_id}", host: @client.api_host)
         end
       end
     end

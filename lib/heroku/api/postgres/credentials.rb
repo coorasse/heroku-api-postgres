@@ -20,7 +20,8 @@ module Heroku
         def rotate(database_id, name: 'default')
           path = "/postgres/v0/databases/#{database_id}/credentials" \
                  "/#{URI.encode_www_form_component(name)}/credentials_rotation"
-          @client.perform_post_request(path, {}, host: @client::API_HOST)
+
+          @client.perform_post_request(path, {}, host: @client.api_host)
         end
       end
     end

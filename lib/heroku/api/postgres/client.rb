@@ -18,9 +18,11 @@ module Heroku
       end
 
       class Client
-        API_HOST = 'https://api.heroku.com'
+        attr_accessor :api_key, :api_host, :oauth_client_key, :heroku_client
 
-        attr_accessor :api_key, :oauth_client_key, :heroku_client
+        def initialize
+          @api_host = 'https://api.heroku.com'
+        end
 
         def backups
           @backups ||= Backups.new(self)
@@ -53,7 +55,7 @@ module Heroku
 
         private
 
-        def build_uri(path, host: API_HOST)
+        def build_uri(path, host: api_host)
           URI.join(host, path)
         end
 
