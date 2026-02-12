@@ -7,7 +7,7 @@ RSpec.describe Heroku::Api::Postgres::Databases, :vcr do
   describe '#info' do
     let(:app_id) { ENV.fetch('VALID_APP_ID_WITH_DATABASE', nil) }
     let(:database_id) { ENV.fetch('VALID_DATABASE_ID_WITH_SCHEDULES', nil) }
-    subject(:json_response) { client.databases.info(app_id, database_id) }
+    subject(:json_response) { client.databases.info(database_id) }
 
     context 'when server returns 404' do
       let(:app_id) { ENV.fetch('VALID_APP_ID_WITH_DATABASE', nil) }
@@ -40,7 +40,7 @@ RSpec.describe Heroku::Api::Postgres::Databases, :vcr do
   describe '#wait' do
     let(:app_id) { ENV.fetch('VALID_APP_ID_WITH_DATABASE', nil) }
     let(:database_id) { ENV.fetch('VALID_DATABASE_ID_WITH_SCHEDULES', nil) }
-    subject(:json_response) { client.databases.wait(app_id, database_id, wait_interval: 4) }
+    subject(:json_response) { client.databases.wait(database_id, wait_interval: 4) }
 
     context 'when server returns 200' do
       it 'waits for the given database to be available and returns the database' do

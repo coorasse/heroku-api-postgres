@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.heroku.com/apps/<VALID_APP_ID_WITH_DATABASE>/addons
+    uri: https://postgres-api.heroku.com/apps/<VALID_APP_ID_WITH_DATABASE>/addons
     body:
       encoding: US-ASCII
       string: ''
@@ -60,7 +60,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 15:21:08 GMT
 - request:
     method: get
-    uri: https://postgres-starter-api.heroku.com/client/v11/databases/whaaaat
+    uri: https://postgres-api.heroku.com/client/v11/databases/whaaaat
     body:
       encoding: US-ASCII
       string: ''

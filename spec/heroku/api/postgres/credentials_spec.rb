@@ -7,7 +7,7 @@ RSpec.describe Heroku::Api::Postgres::Credentials, :vcr do
   describe '#rotate' do
     let(:app_id) { ENV.fetch('VALID_APP_ID_WITH_DATABASE', nil) }
     let(:database_id) { ENV.fetch('VALID_DATABASE_ID_WITH_SCHEDULES', nil) }
-    subject(:json_response) { client.credentials.rotate(app_id, database_id) }
+    subject(:json_response) { client.credentials.rotate(database_id) }
 
     context 'server returns 404' do
       let(:database_id) { 'whaaaat' }

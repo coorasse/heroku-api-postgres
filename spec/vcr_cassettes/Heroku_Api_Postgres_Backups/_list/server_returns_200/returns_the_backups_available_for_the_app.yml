@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID>/transfers
+    uri: https://postgres-api.heroku.com/client/v11/apps/<VALID_APP_ID>/transfers
     body:
       encoding: US-ASCII
       string: ''

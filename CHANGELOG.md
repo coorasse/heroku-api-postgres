@@ -1,3 +1,14 @@
+## 0.14.0
+
+* [#24](https://github.com/coorasse/heroku-api-postgres/pull/24): **Breaking change**: Remove `app_id` from the following methods ([@hunchr]):
+  * `client.backups.capture(database_id)`
+  * `client.backups.restore(database_id, backup_url)`
+  * `client.backups.schedule(database_id)`
+  * `client.backups.schedules(database_id)`
+  * `client.credentials.rotate(database_id)`
+  * `client.databases.info(database_id)`
+  * `client.databases.wait(database_id)`
+
 ## 0.13.0
 
 * Update of dependencies and minimum ruby version set to 3.2.7. ([@coorasse][])
@@ -13,4 +24,5 @@
 [@avokhmin]: https://github.com/avokhmin
 [@deepakmahakale]: https://github.com/deepakmahakale
 [@louism517]: https://github.com/louism517
+[@hunchr]: https://github.com/hunchr
 [@coorasse]: https://github.com/coorasse

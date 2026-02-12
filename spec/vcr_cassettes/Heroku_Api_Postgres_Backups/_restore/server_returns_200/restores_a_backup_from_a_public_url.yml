@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.heroku.com/apps/<VALID_APP_ID_WITH_DATABASE>/addons
+    uri: https://postgres-api.heroku.com/apps/<VALID_APP_ID_WITH_DATABASE>/addons
     body:
       encoding: US-ASCII
       string: ''
@@ -60,7 +60,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 16:22:56 GMT
 - request:
     method: post
-    uri: https://postgres-starter-api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_SCHEDULES>/restores
+    uri: https://postgres-api.heroku.com/client/v11/databases/<VALID_DATABASE_ID_WITH_SCHEDULES>/restores
     body:
       encoding: UTF-8
       string: '{"backup_url":"<VALID_DUMP_URL>"}'
@@ -96,7 +96,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 16:22:59 GMT
 - request:
     method: get
-    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
+    uri: https://postgres-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
     body:
       encoding: US-ASCII
       string: ''
@@ -132,7 +132,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 16:23:00 GMT
 - request:
     method: get
-    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
+    uri: https://postgres-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
     body:
       encoding: US-ASCII
       string: ''
@@ -168,7 +168,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 16:23:00 GMT
 - request:
     method: get
-    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
+    uri: https://postgres-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
     body:
       encoding: US-ASCII
       string: ''
@@ -205,7 +205,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 16:23:01 GMT
 - request:
     method: get
-    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
+    uri: https://postgres-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
     body:
       encoding: US-ASCII
       string: ''
@@ -242,7 +242,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 16:23:01 GMT
 - request:
     method: get
-    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
+    uri: https://postgres-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
     body:
       encoding: US-ASCII
       string: ''
@@ -279,7 +279,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 16:23:02 GMT
 - request:
     method: get
-    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
+    uri: https://postgres-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
     body:
       encoding: US-ASCII
       string: ''
@@ -316,7 +316,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 16:23:03 GMT
 - request:
     method: get
-    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
+    uri: https://postgres-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
     body:
       encoding: US-ASCII
       string: ''
@@ -353,7 +353,7 @@ http_interactions:
   recorded_at: Sun, 13 Dec 2020 16:23:03 GMT
 - request:
     method: get
-    uri: https://postgres-starter-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
+    uri: https://postgres-api.heroku.com/client/v11/apps/<VALID_APP_ID_WITH_DATABASE>/transfers/1723
     body:
       encoding: US-ASCII
       string: ''
