@@ -1,18 +1,25 @@
 ## 0.14.0
 
-* [#24](https://github.com/coorasse/heroku-api-postgres/pull/24): **Breaking change**: Remove `app_id` for some methods ([@hunchr])
+* [#24](https://github.com/coorasse/heroku-api-postgres/pull/24): **Breaking change**: Remove `app_id` from the following methods ([@hunchr]):
+  * `client.backups.capture(database_id)`
+  * `client.backups.restore(database_id, backup_url)`
+  * `client.backups.schedule(database_id)`
+  * `client.backups.schedules(database_id)`
+  * `client.credentials.rotate(database_id)`
+  * `client.databases.info(database_id)`
+  * `client.databases.wait(database_id)`
 
 ## 0.13.0
 
-* Update of dependencies and minimum ruby version set to 3.2.7. ([@coorasse])
-* Allow to connect using an API Key. ([@coorasse])
+* Update of dependencies and minimum ruby version set to 3.2.7. ([@coorasse][])
+* Allow to connect using an API Key. ([@coorasse][])
 
 ## 0.12.0
 
-* [#18](https://github.com/coorasse/heroku-api-postgres/pull/18): Support Ruby 3.0. ([@louism517])
-* [#15](https://github.com/coorasse/heroku-api-postgres/pull/15): Return latest backup if backup_num is not provided. ([@deepakmahakale])
-* [#14](https://github.com/coorasse/heroku-api-postgres/pull/14): Add support for rotating credentials. ([@avokhmin])
-* [#13](https://github.com/coorasse/heroku-api-postgres/pull/13): Allow to use hour and timezone when scheduling backups. ([@avokhmin])
+* [#18](https://github.com/coorasse/heroku-api-postgres/pull/18): Support ruby 3.0. ([@louism517][])
+* [#15](https://github.com/coorasse/heroku-api-postgres/pull/15): Return latest backup if backup_num is not provided. ([@deepakmahakale][])
+* [#14](https://github.com/coorasse/heroku-api-postgres/pull/14): Add support for rotating credentials. ([@avokhmin][])
+* [#13](https://github.com/coorasse/heroku-api-postgres/pull/13): Allow to use hour and timezone when scheduling backups. ([@avokhmin][])
 
 [@avokhmin]: https://github.com/avokhmin
 [@deepakmahakale]: https://github.com/deepakmahakale

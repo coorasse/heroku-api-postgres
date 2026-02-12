@@ -13,7 +13,7 @@ The command returns immediately, without waiting for the capture to be completed
 - [ ] pg:backups:delete
 - [ ] pg:backups:download
 - [x] pg:backups:info --> `client.backups.info(app_id, backup_id)`
-- [x] pg:backups:restore --> `client.backups.restore(dump_url)`
+- [x] pg:backups:restore --> `client.backups.restore(database_id, backup_url)`
 The command works only with public URLs. It does not support all the features of the original
 `heroku pg:backups:restore` command, like restoring directly from another database.
 The command returns immediately, without waiting for the capture to be completed.
