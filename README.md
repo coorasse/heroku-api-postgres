@@ -1,8 +1,8 @@
 # Heroku::Api::Postgres
 
-**This gem has been extracted from https://db-backups.com.**
+**This gem is unmantained since I migrated everything to https://deplo.io.**
+**If you want to maintain it, write me an email.**
 
-**Your "one click" backup solution for Heroku apps.**
 
 Ruby library to invoke Heroku Postgres APIs.
 An extension to the official [Platform API](https://github.com/heroku/platform-api) gem to introduce the missing APIs for Postgres.
